@@ -57,17 +57,17 @@
                   <TextField fx:id="searchBar" layoutX="50.0" prefHeight="25.0" prefWidth="225.0" promptText="Search" />
                   <ImageView fx:id="info" fitHeight="24.0" fitWidth="24.0" layoutX="523.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons8-info-24.png" />
+                        <Image url="@../../icons8-info-24.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="watchlist" fitHeight="24.0" fitWidth="24.0" layoutX="557.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons8-bookmark-24.png" />
+                        <Image url="@../../icons8-bookmark-24.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="user" fitHeight="24.0" fitWidth="24.0" layoutX="591.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons8-avatar-24.png" />
+                        <Image url="@../../icons8-avatar-24.png" />
                      </image>
                   </ImageView>
                   <Separator layoutY="45.0" prefWidth="640.0" />

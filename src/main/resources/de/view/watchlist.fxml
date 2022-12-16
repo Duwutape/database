@@ -54,22 +54,22 @@
                <children>
                   <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons8-go-back-24.png" />
+                        <Image url="@../../icons8-go-back-24.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="info" fitHeight="24.0" fitWidth="24.0" layoutX="508.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons8-info-24.png" />
+                        <Image url="@../../icons8-info-24.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="watchlist" fitHeight="24.0" fitWidth="24.0" layoutX="542.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons8-bookmark-24.png" />
+                        <Image url="@../../icons8-bookmark-24.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="user" fitHeight="24.0" fitWidth="24.0" layoutX="576.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons8-avatar-24.png" />
+                        <Image url="@../../icons8-avatar-24.png" />
                      </image>
                   </ImageView>
                </children>
