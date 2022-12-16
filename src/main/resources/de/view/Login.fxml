@@ -44,7 +44,7 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
-            <TextField fx:id="inputname" layoutX="80.0" layoutY="20.0" promptText="Name" />
+            <TextField fx:id="inputName" layoutX="80.0" layoutY="20.0" promptText="Name" />
             <PasswordField fx:id="inputPassword" layoutX="80.0" layoutY="65.0" promptText="*******" />
             <Label layoutY="24.0" text="Username" />
             <Label layoutY="69.0" text="Password" />

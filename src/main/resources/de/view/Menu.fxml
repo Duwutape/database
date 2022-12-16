@@ -65,12 +65,16 @@
                         <Image url="@../../icons8-bookmark-24.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="user" fitHeight="24.0" fitWidth="24.0" layoutX="591.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../icons8-avatar-24.png" />
-                     </image>
-                  </ImageView>
                   <Separator layoutY="45.0" prefWidth="640.0" />
+                  <Button fx:id="userButton" layoutX="591.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../icons8-avatar-24.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
                <padding>
                   <Insets left="20.0" right="20.0" top="20.0" />
