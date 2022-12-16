@@ -1,0 +1,6 @@
+user.png: <a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Freepik - Flaticon</a>
+icons8-customer-32.png: <a target="_blank" href="https://icons8.com/icon/15265/customer">Customer</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+icons8-avatar-24.png: <a target="_blank" href="https://icons8.com/icon/1CBfSGMIbmiT/avatar">avatar</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+icons8-bookmark-24.png: <a target="_blank" href="https://icons8.com/icon/qFSLWFSEYvcw/bookmark">bookmark</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+icons8-info-24.png: <a target="_blank" href="https://icons8.com/icon/82742/info">Info</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+icons8-go-back-24.png: <a target="_blank" href="https://icons8.com/icon/89782/go-back">Go Back</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
