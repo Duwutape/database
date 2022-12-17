@@ -1,0 +1,160 @@
+- c: 	org.fulib.classmodel.ClassModel
+  classes: 	filterBook 	filterBasic 	filterGame 	filterMovie 	filterAnime 	filterSeries 	filterType
+  defaultCollectionType: 	c1
+  defaultPropertyStyle: 	POJO
+  defaultRoleType: 	"java.util.ArrayList<%s>"
+  mainJavaDir: 	"src/main/java"
+  packageName: 	de.filter
+  packageSrcFolder: 	"src/main/java/de/filter"
+
+- filterBook: 	org.fulib.classmodel.Clazz
+  attributes: 	filterBook_filterUniverse 	filterBook_filterAuthor
+  model: 	c
+  modified: 	false
+  name: 	FilterBook
+  propertyStyle: 	POJO
+  superClass: 	filterBasic
+
+- filterBasic: 	org.fulib.classmodel.Clazz
+  attributes: 	filterBasic_filterYear 	filterBasic_filterFsk 	filterBasic_filterGenre
+  model: 	c
+  modified: 	false
+  name: 	FilterBasic
+  propertyStyle: 	POJO
+  subClasses: 	filterBook 	filterGame 	filterMovie 	filterAnime 	filterSeries
+
+- filterGame: 	org.fulib.classmodel.Clazz
+  attributes: 	filterGame_filterUniverse
+  model: 	c
+  modified: 	false
+  name: 	FilterGame
+  propertyStyle: 	POJO
+  superClass: 	filterBasic
+
+- filterMovie: 	org.fulib.classmodel.Clazz
+  attributes: 	filterMovie_filterUniverse
+  model: 	c
+  modified: 	false
+  name: 	FilterMovie
+  propertyStyle: 	POJO
+  superClass: 	filterBasic
+
+- filterAnime: 	org.fulib.classmodel.Clazz
+  model: 	c
+  modified: 	false
+  name: 	FilterAnime
+  propertyStyle: 	POJO
+  superClass: 	filterBasic
+
+- filterSeries: 	org.fulib.classmodel.Clazz
+  attributes: 	filterSeries_filterLanguage 	filterSeries_filterPlatform
+  model: 	c
+  modified: 	false
+  name: 	FilterSeries
+  propertyStyle: 	POJO
+  superClass: 	filterBasic
+
+- filterType: 	org.fulib.classmodel.Clazz
+  attributes: 	filterType_filter
+  model: 	c
+  modified: 	false
+  name: 	FilterType
+  propertyStyle: 	POJO
+
+- c1: 	org.fulib.classmodel.CollectionType
+  implClass: 	class java.util.ArrayList
+  implTemplate: 	"java.util.ArrayList<%s>"
+  itf: 	org.fulib.classmodel.CollectionInterface.List
+  qualifiedImplName: 	java.util.ArrayList
+  simpleImplName: 	ArrayList
+
+- filterBook_filterUniverse: 	org.fulib.classmodel.Attribute
+  clazz: 	filterBook
+  id: 	FilterBook_filterUniverse
+  modified: 	false
+  name: 	filterUniverse
+  propertyStyle: 	POJO
+  type: 	"String[]"
+  typeSignature: 	"String[]"
+
+- filterBook_filterAuthor: 	org.fulib.classmodel.Attribute
+  clazz: 	filterBook
+  id: 	FilterBook_filterAuthor
+  modified: 	false
+  name: 	filterAuthor
+  propertyStyle: 	POJO
+  type: 	"String[]"
+  typeSignature: 	"String[]"
+
+- filterBasic_filterYear: 	org.fulib.classmodel.Attribute
+  clazz: 	filterBasic
+  id: 	FilterBasic_filterYear
+  modified: 	false
+  name: 	filterYear
+  propertyStyle: 	POJO
+  type: 	"String[]"
+  typeSignature: 	"String[]"
+
+- filterBasic_filterFsk: 	org.fulib.classmodel.Attribute
+  clazz: 	filterBasic
+  id: 	FilterBasic_filterFsk
+  modified: 	false
+  name: 	filterFsk
+  propertyStyle: 	POJO
+  type: 	"String[]"
+  typeSignature: 	"String[]"
+
+- filterBasic_filterGenre: 	org.fulib.classmodel.Attribute
+  clazz: 	filterBasic
+  id: 	FilterBasic_filterGenre
+  modified: 	false
+  name: 	filterGenre
+  propertyStyle: 	POJO
+  type: 	"String[]"
+  typeSignature: 	"String[]"
+
+- filterGame_filterUniverse: 	org.fulib.classmodel.Attribute
+  clazz: 	filterGame
+  id: 	FilterGame_filterUniverse
+  modified: 	false
+  name: 	filterUniverse
+  propertyStyle: 	POJO
+  type: 	"String[]"
+  typeSignature: 	"String[]"
+
+- filterMovie_filterUniverse: 	org.fulib.classmodel.Attribute
+  clazz: 	filterMovie
+  id: 	FilterMovie_filterUniverse
+  modified: 	false
+  name: 	filterUniverse
+  propertyStyle: 	POJO
+  type: 	"String[]"
+  typeSignature: 	"String[]"
+
+- filterSeries_filterLanguage: 	org.fulib.classmodel.Attribute
+  clazz: 	filterSeries
+  id: 	FilterSeries_filterLanguage
+  modified: 	false
+  name: 	filterLanguage
+  propertyStyle: 	POJO
+  type: 	"String[]"
+  typeSignature: 	"String[]"
+
+- filterSeries_filterPlatform: 	org.fulib.classmodel.Attribute
+  clazz: 	filterSeries
+  id: 	FilterSeries_filterPlatform
+  modified: 	false
+  name: 	filterPlatform
+  propertyStyle: 	POJO
+  type: 	"String[]"
+  typeSignature: 	"String[]"
+
+- filterType_filter: 	org.fulib.classmodel.Attribute
+  clazz: 	filterType
+  id: 	FilterType_filter
+  modified: 	false
+  name: 	filter
+  propertyStyle: 	POJO
+  type: 	"String[]"
+  typeSignature: 	"String[]"
+
