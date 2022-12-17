@@ -53,20 +53,27 @@
          <children>
             <Pane prefWidth="640.0">
                <children>
-                  <Button fx:id="searchButton" defaultButton="true" layoutX="285.0" mnemonicParsing="false" text="Search" />
-                  <TextField fx:id="searchBar" layoutX="50.0" prefHeight="25.0" prefWidth="225.0" promptText="Search" />
-                  <ImageView fx:id="info" fitHeight="24.0" fitWidth="24.0" layoutX="523.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../icons8-info-24.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="watchlist" fitHeight="24.0" fitWidth="24.0" layoutX="557.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../icons8-bookmark-24.png" />
-                     </image>
-                  </ImageView>
-                  <Separator layoutY="45.0" prefWidth="640.0" />
-                  <Button fx:id="userButton" layoutX="591.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: transparent;">
+                  <Button fx:id="searchButton" defaultButton="true" layoutX="290.0" layoutY="4.0" mnemonicParsing="false" text="Search" />
+                  <TextField fx:id="searchBar" layoutX="50.0" layoutY="4.0" prefHeight="25.0" prefWidth="225.0" promptText="Search" />
+                  <Button fx:id="infoButton" layoutX="500.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../icons8-info-24.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="watchlistButton" layoutX="540.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../icons8-bookmark-24.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="userButton" layoutX="580.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: transparent;">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -75,6 +82,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
+                  <Separator layoutY="45.0" prefWidth="640.0" />
                </children>
                <padding>
                   <Insets left="20.0" right="20.0" top="20.0" />
@@ -94,9 +102,9 @@
                      <content>
                         <VBox prefWidth="85.0">
                            <children>
-                              <VBox>
+                              <VBox fx:id="filterCategoryList">
                                  <children>
-                                    <Label fx:id="filterCategory" text="Type">
+                                    <Label fx:id="filterCategoryLabel" text="Type">
                                        <font>
                                           <Font size="13.0" />
                                        </font>
@@ -154,65 +162,42 @@
                   </Label>
                   <ScrollPane layoutY="20.0" prefHeight="295.0" prefWidth="480.0">
                      <content>
-                        <VBox prefWidth="465.0">
+                        <VBox prefWidth="465.0" spacing="10.0">
                            <children>
-                              <VBox prefWidth="100.0">
+                              <VBox prefWidth="100.0" spacing="5.0">
                                  <children>
                                     <Pane>
                                        <children>
-                                          <Label text="Name" />
-                                          <Label layoutX="50.0" text="Info 1" />
-                                          <Label layoutX="100.0" text="Info 2" />
-                                          <Label layoutX="150.0" text="Info 2" />
-                                          <Label layoutX="200.0" text="Info 3" />
+                                          <Label layoutY="4.0" text="Name" />
+                                          <Label layoutX="50.0" layoutY="4.0" text="Info 1" />
+                                          <Label layoutX="100.0" layoutY="4.0" text="Info 2" />
+                                          <Label layoutX="150.0" layoutY="4.0" text="Info 2" />
+                                          <Label layoutX="200.0" layoutY="4.0" text="Info 3" />
                                           <Button fx:id="moreInfoButton" layoutX="232.0" mnemonicParsing="false" text="more infos" />
-                                          <ComboBox fx:id="selectList" layoutX="315.0" prefWidth="150.0" promptText="Add to List" />
+                                          <ComboBox fx:id="selcetList" layoutX="315.0" prefWidth="150.0" promptText="Add to List" />
                                        </children>
-                                       <padding>
-                                          <Insets bottom="5.0" />
-                                       </padding>
                                     </Pane>
-                                    <Pane>
+                                    <Pane layoutX="10.0" layoutY="10.0">
                                        <children>
-                                          <Label text="Name" />
-                                          <Label layoutX="50.0" text="Info 1" />
-                                          <Label layoutX="100.0" text="Info 2" />
-                                          <Label layoutX="150.0" text="Info 2" />
-                                          <Label layoutX="200.0" text="Info 3" />
+                                          <Label layoutY="4.0" text="Name" />
+                                          <Label layoutX="50.0" layoutY="4.0" text="Info 1" />
+                                          <Label layoutX="100.0" layoutY="4.0" text="Info 2" />
+                                          <Label layoutX="150.0" layoutY="4.0" text="Info 2" />
+                                          <Label layoutX="200.0" layoutY="4.0" text="Info 3" />
                                           <Button layoutX="232.0" mnemonicParsing="false" text="more infos" />
                                           <ComboBox layoutX="315.0" prefWidth="150.0" promptText="Add to List" />
                                        </children>
-                                       <padding>
-                                          <Insets bottom="5.0" />
-                                       </padding>
                                     </Pane>
-                                    <Pane>
+                                    <Pane layoutX="10.0" layoutY="35.0">
                                        <children>
-                                          <Label text="Name" />
-                                          <Label layoutX="50.0" text="Info 1" />
-                                          <Label layoutX="100.0" text="Info 2" />
-                                          <Label layoutX="150.0" text="Info 2" />
-                                          <Label layoutX="200.0" text="Info 3" />
+                                          <Label layoutY="4.0" text="Name" />
+                                          <Label layoutX="50.0" layoutY="4.0" text="Info 1" />
+                                          <Label layoutX="100.0" layoutY="4.0" text="Info 2" />
+                                          <Label layoutX="150.0" layoutY="4.0" text="Info 2" />
+                                          <Label layoutX="200.0" layoutY="4.0" text="Info 3" />
                                           <Button layoutX="232.0" mnemonicParsing="false" text="more infos" />
                                           <ComboBox layoutX="315.0" prefWidth="150.0" promptText="Add to List" />
                                        </children>
-                                       <padding>
-                                          <Insets bottom="5.0" />
-                                       </padding>
-                                    </Pane>
-                                    <Pane>
-                                       <children>
-                                          <Label text="Name" />
-                                          <Label layoutX="50.0" text="Info 1" />
-                                          <Label layoutX="100.0" text="Info 2" />
-                                          <Label layoutX="150.0" text="Info 2" />
-                                          <Label layoutX="200.0" text="Info 3" />
-                                          <Button layoutX="232.0" mnemonicParsing="false" text="more infos" />
-                                          <ComboBox layoutX="315.0" prefWidth="150.0" promptText="Add to List" />
-                                       </children>
-                                       <padding>
-                                          <Insets bottom="5.0" />
-                                       </padding>
                                     </Pane>
                                  </children>
                               </VBox>
