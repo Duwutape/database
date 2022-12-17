@@ -2,6 +2,8 @@ package de.controller;
 
 import de.App;
 import de.Main;
+import de.model.User;
+import de.service.CodeService;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
@@ -12,9 +14,13 @@ import java.io.IOException;
 public class WatchlistController implements Controller {
 
     private final App app;
+    private final User user;
+    private final CodeService codeService;
 
-    public WatchlistController(App app) {
+    public WatchlistController(App app, User user, CodeService codeService) {
         this.app = app;
+        this.user = user;
+        this.codeService = codeService;
     }
 
     @Override
@@ -38,11 +44,11 @@ public class WatchlistController implements Controller {
 
         //set action
         backButton.setOnAction(event -> {
-            app.show(new MenuController(app));
+            app.show(new MenuController(app, user, codeService));
         });
 
         aboutButton.setOnAction(event -> {
-            app.show(new AboutController(app));
+            app.show(new AboutController(app, user, codeService));
         });
 
         return parent;

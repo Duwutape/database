@@ -1,7 +1,10 @@
 package de.controller;
 
+import com.sun.security.auth.UnixNumericUserPrincipal;
 import de.App;
 import de.Main;
+import de.model.User;
+import de.service.CodeService;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
@@ -11,12 +14,17 @@ import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.UUID;
 
 public class AboutController implements Controller {
     private final App app;
+    private final User user;
+    private final CodeService codeService;
 
-    public AboutController(App app) {
+    public AboutController(App app, User user, CodeService codeService) {
         this.app = app;
+        this.user = user;
+        this.codeService = codeService;
     }
 
     @Override
@@ -41,7 +49,7 @@ public class AboutController implements Controller {
 
         // set actions
         backButton.setOnAction(action -> {
-            app.show(new MenuController(app));
+            app.show(new MenuController(app, user, codeService));
         });
 
         linkGit.setOnAction(action -> {
@@ -65,6 +73,5 @@ public class AboutController implements Controller {
 
     @Override
     public void destroy() {
-
     }
 }

@@ -21,6 +21,9 @@ dependencies {
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
     fulibScenarios group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.36'
 
+    // https://mvnrepository.com/artifact/org.fulib/fulibYaml
+    implementation group: 'org.fulib', name: 'fulibYaml', version: '1.5.0'
+
     // https://mvnrepository.com/artifact/org.fulib/fulibTools
     testImplementation group: 'org.fulib', name: 'fulibTools', version: '1.5.1'
 
