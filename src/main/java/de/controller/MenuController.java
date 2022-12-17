@@ -18,7 +18,7 @@ public class MenuController implements Controller {
 
     @Override
     public String getTitle() {
-        return "Database - Menu";
+        return "Menu";
     }
 
     @Override
@@ -35,10 +35,15 @@ public class MenuController implements Controller {
         final TextField searchBar = (TextField) parent.lookup("#searchBar");
         final Button searchButton = (Button) parent.lookup("#searchButton");
         final Button watchlistButton = (Button) parent.lookup("#watchlistButton");
+        final Button aboutButton = (Button) parent.lookup("#aboutButton");
 
         // set actions
         watchlistButton.setOnAction(action -> {
             app.show(new WatchlistController(app));
+        });
+
+        aboutButton.setOnAction(action -> {
+            app.show(new AboutController(app));
         });
 
         return parent;

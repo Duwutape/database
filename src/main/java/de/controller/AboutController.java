@@ -21,7 +21,7 @@ public class AboutController implements Controller {
 
     @Override
     public String getTitle() {
-        return "Database - About";
+        return "About";
     }
 
     @Override

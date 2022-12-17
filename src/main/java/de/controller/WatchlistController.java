@@ -19,7 +19,7 @@ public class WatchlistController implements Controller {
 
     @Override
     public String getTitle() {
-        return "Database - Watchlist";
+        return "Watchlist";
     }
 
     @Override

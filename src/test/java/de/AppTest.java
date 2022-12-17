@@ -25,6 +25,16 @@ public class AppTest extends ApplicationTest
 	@Test
 	public void changeView()
 	{
-
+		assertEquals("Menu", stage.getTitle());
+		clickOn("#watchlistButton");
+		assertEquals("Watchlist", stage.getTitle());
+		clickOn("#aboutButton");
+		assertEquals("About", stage.getTitle());
+		clickOn("#backButton");
+		assertEquals("Menu", stage.getTitle());
+		clickOn("#aboutButton");
+		assertEquals("About", stage.getTitle());
+		clickOn("#backButton");
+		assertEquals("Menu", stage.getTitle());
 	}
 }
