@@ -6,8 +6,8 @@ plugins {
     id 'org.fulib.fulibGradle' version '0.5.0'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+group = 'de'
+version = '1.0-SNAPSHOT'
 
 repositories {
     mavenLocal()
@@ -48,6 +48,6 @@ javafx {
     modules = [ 'javafx.controls', 'javafx.graphics', 'javafx.fxml' ]
 }
 
-test {
-    useJUnitPlatform()
+generateScenarioSource {
+    classDiagramSVG = true
 }
