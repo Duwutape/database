@@ -13,7 +13,7 @@
   modified: 	false
   name: 	Book
   propertyStyle: 	POJO
-  roles: 	book_Watchlist_booksList
+  roles: 	book_prequel 	book_sequel 	book_Watchlist_booksList
   superClass: 	basic
 
 - basic: 	org.fulib.classmodel.Clazz
@@ -125,6 +125,30 @@
   propertyStyle: 	POJO
   type: 	"import(java.util.Date)"
   typeSignature: 	Date
+
+- book_prequel: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	book
+  collectionType: 	c1
+  id: 	Book_prequel
+  modified: 	false
+  name: 	prequel
+  other: 	book_sequel
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- book_sequel: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	book
+  collectionType: 	c1
+  id: 	Book_sequel
+  modified: 	false
+  name: 	sequel
+  other: 	book_prequel
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
 
 - book_Watchlist_booksList: 	org.fulib.classmodel.AssocRole
   aggregation: 	false

@@ -106,7 +106,10 @@ public class GenModel implements ClassModelDecorator {
         String universe;
         ArrayList<String> author;
         Date date;
-
+        @Link("sequel")
+        ArrayList<Book> prequel;
+        @Link("prequel")
+        ArrayList<Book> sequel;
     }
 
     @Override

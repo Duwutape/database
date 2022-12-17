@@ -11,9 +11,13 @@ extends Basic {
    public static final String PROPERTY_UNIVERSE = "universe";
    public static final String PROPERTY_AUTHOR = "author";
    public static final String PROPERTY_DATE = "date";
+   public static final String PROPERTY_PREQUEL = "prequel";
+   public static final String PROPERTY_SEQUEL = "sequel";
    private String universe;
    private List<String> author;
    private Date date;
+   private List<Book> prequel;
+   private List<Book> sequel;
 
    public String getUniverse()
    {
@@ -92,6 +96,134 @@ extends Basic {
       return this;
    }
 
+   public List<Book> getPrequel()
+   {
+      return this.prequel != null ? Collections.unmodifiableList(this.prequel) : Collections.emptyList();
+   }
+
+   public Book withPrequel(Book value)
+   {
+      if (this.prequel == null)
+      {
+         this.prequel = new ArrayList<>();
+      }
+      if (!this.prequel.contains(value))
+      {
+         this.prequel.add(value);
+         value.withSequel(this);
+      }
+      return this;
+   }
+
+   public Book withPrequel(Book... value)
+   {
+      for (final Book item : value)
+      {
+         this.withPrequel(item);
+      }
+      return this;
+   }
+
+   public Book withPrequel(Collection<? extends Book> value)
+   {
+      for (final Book item : value)
+      {
+         this.withPrequel(item);
+      }
+      return this;
+   }
+
+   public Book withoutPrequel(Book value)
+   {
+      if (this.prequel != null && this.prequel.remove(value))
+      {
+         value.withoutSequel(this);
+      }
+      return this;
+   }
+
+   public Book withoutPrequel(Book... value)
+   {
+      for (final Book item : value)
+      {
+         this.withoutPrequel(item);
+      }
+      return this;
+   }
+
+   public Book withoutPrequel(Collection<? extends Book> value)
+   {
+      for (final Book item : value)
+      {
+         this.withoutPrequel(item);
+      }
+      return this;
+   }
+
+   public List<Book> getSequel()
+   {
+      return this.sequel != null ? Collections.unmodifiableList(this.sequel) : Collections.emptyList();
+   }
+
+   public Book withSequel(Book value)
+   {
+      if (this.sequel == null)
+      {
+         this.sequel = new ArrayList<>();
+      }
+      if (!this.sequel.contains(value))
+      {
+         this.sequel.add(value);
+         value.withPrequel(this);
+      }
+      return this;
+   }
+
+   public Book withSequel(Book... value)
+   {
+      for (final Book item : value)
+      {
+         this.withSequel(item);
+      }
+      return this;
+   }
+
+   public Book withSequel(Collection<? extends Book> value)
+   {
+      for (final Book item : value)
+      {
+         this.withSequel(item);
+      }
+      return this;
+   }
+
+   public Book withoutSequel(Book value)
+   {
+      if (this.sequel != null && this.sequel.remove(value))
+      {
+         value.withoutPrequel(this);
+      }
+      return this;
+   }
+
+   public Book withoutSequel(Book... value)
+   {
+      for (final Book item : value)
+      {
+         this.withoutSequel(item);
+      }
+      return this;
+   }
+
+   public Book withoutSequel(Collection<? extends Book> value)
+   {
+      for (final Book item : value)
+      {
+         this.withoutSequel(item);
+      }
+      return this;
+   }
+
    @Override
    public String toString()
    {
@@ -99,5 +231,11 @@ extends Basic {
       result.append(' ').append(this.getUniverse());
       result.append(' ').append(this.getAuthor());
       return result.toString();
+   }
+
+   public void removeYou()
+   {
+      this.withoutPrequel(new ArrayList<>(this.getPrequel()));
+      this.withoutSequel(new ArrayList<>(this.getSequel()));
    }
 }

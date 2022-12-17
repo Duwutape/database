@@ -1,8 +1,8 @@
-<svg width="809px" height="511px"
- viewBox="0.00 0.00 809.25 511.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="827px" height="511px"
+ viewBox="0.00 0.00 827.25 511.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0) translate(4 507)">
 <title>de.model</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-507 805.25,-507 805.25,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-507 823.25,-507 823.25,4 -4,4"/>
 <!-- Anime -->
 <g id="node1" class="node">
 <title>Anime</title>
@@ -37,7 +37,7 @@
 <text text-anchor="start" x="258" y="-343.8" font-family="Times,serif" font-size="14.00">platform :List&lt;String&gt;</text>
 </g>
 <!-- Anime&#45;&gt;Basic -->
-<g id="edge17" class="edge">
+<g id="edge18" class="edge">
 <title>Anime&#45;&gt;Basic</title>
 <path fill="none" stroke="black" d="M263.68,-297.19C267.8,-305.66 272.19,-314.67 276.64,-323.81"/>
 <polygon fill="none" stroke="black" points="273.57,-325.51 281.1,-332.97 279.86,-322.45 273.57,-325.51"/>
@@ -53,70 +53,77 @@
 <text text-anchor="start" x="347" y="-213.3" font-family="Times,serif" font-size="14.00">date :Date</text>
 </g>
 <!-- Book&#45;&gt;Basic -->
-<g id="edge18" class="edge">
+<g id="edge19" class="edge">
 <title>Book&#45;&gt;Basic</title>
 <path fill="none" stroke="black" d="M383.73,-288.65C378.59,-299.33 372.86,-311.25 367.02,-323.39"/>
 <polygon fill="none" stroke="black" points="363.72,-322.17 362.54,-332.7 370.03,-325.21 363.72,-322.17"/>
 </g>
+<!-- Book&#45;&gt;Book -->
+<g id="edge13" class="edge">
+<title>Book&#45;&gt;Book</title>
+<path fill="none" stroke="black" d="M472.13,-223.16C482.76,-226.5 490,-233.95 490,-245.5 490,-257.05 482.76,-264.5 472.13,-267.84"/>
+<text text-anchor="middle" x="495.26" y="-272.04" font-family="Times,serif" font-size="14.00">sequel *</text>
+<text text-anchor="middle" x="498.37" y="-210.56" font-family="Times,serif" font-size="14.00">prequel *</text>
+</g>
 <!-- Game -->
 <g id="node4" class="node">
 <title>Game</title>
-<polygon fill="none" stroke="black" points="646,-245.5 646,-267.5 741,-267.5 741,-245.5 646,-245.5"/>
-<text text-anchor="start" x="676.79" y="-251.9" font-family="Times,serif" font-size="14.00">Game</text>
-<polygon fill="none" stroke="black" points="646,-223.5 646,-245.5 741,-245.5 741,-223.5 646,-223.5"/>
-<text text-anchor="start" x="649" y="-229.9" font-family="Times,serif" font-size="14.00">universe :String</text>
+<polygon fill="none" stroke="black" points="664,-245.5 664,-267.5 759,-267.5 759,-245.5 664,-245.5"/>
+<text text-anchor="start" x="694.79" y="-251.9" font-family="Times,serif" font-size="14.00">Game</text>
+<polygon fill="none" stroke="black" points="664,-223.5 664,-245.5 759,-245.5 759,-223.5 664,-223.5"/>
+<text text-anchor="start" x="667" y="-229.9" font-family="Times,serif" font-size="14.00">universe :String</text>
 </g>
 <!-- Game&#45;&gt;Basic -->
-<g id="edge19" class="edge">
+<g id="edge20" class="edge">
 <title>Game&#45;&gt;Basic</title>
-<path fill="none" stroke="black" d="M664.98,-271.55C654.23,-280.35 641.53,-289.82 629,-297 558.04,-337.66 470.63,-370.32 407.25,-391.24"/>
-<polygon fill="none" stroke="black" points="406.11,-387.93 397.69,-394.37 408.28,-394.59 406.11,-387.93"/>
+<path fill="none" stroke="black" d="M683.06,-271.67C672.31,-280.49 659.59,-289.94 647,-297 570.11,-340.1 474.76,-373.17 407.27,-393.58"/>
+<polygon fill="none" stroke="black" points="406.09,-390.28 397.52,-396.5 408.1,-396.99 406.09,-390.28"/>
 </g>
 <!-- Game&#45;&gt;Game -->
-<g id="edge13" class="edge">
+<g id="edge14" class="edge">
 <title>Game&#45;&gt;Game</title>
-<path fill="none" stroke="black" d="M748.77,-222.38C759.17,-225.22 766.5,-232.93 766.5,-245.5 766.5,-258.07 759.17,-265.78 748.77,-268.62"/>
-<text text-anchor="middle" x="771.9" y="-256.02" font-family="Times,serif" font-size="14.00">sequel *</text>
-<text text-anchor="middle" x="775.01" y="-209.78" font-family="Times,serif" font-size="14.00">prequel *</text>
+<path fill="none" stroke="black" d="M766.77,-222.38C777.17,-225.22 784.5,-232.93 784.5,-245.5 784.5,-258.07 777.17,-265.78 766.77,-268.62"/>
+<text text-anchor="middle" x="789.9" y="-256.02" font-family="Times,serif" font-size="14.00">sequel *</text>
+<text text-anchor="middle" x="793.01" y="-209.78" font-family="Times,serif" font-size="14.00">prequel *</text>
 </g>
 <!-- Release -->
 <g id="node6" class="node">
 <title>Release</title>
-<polygon fill="none" stroke="black" points="627,-435 627,-457 760,-457 760,-435 627,-435"/>
-<text text-anchor="start" x="671.73" y="-441.4" font-family="Times,serif" font-size="14.00">Release</text>
-<polygon fill="none" stroke="black" points="627,-379 627,-435 760,-435 760,-379 627,-379"/>
-<text text-anchor="start" x="630" y="-419.4" font-family="Times,serif" font-size="14.00">year :int</text>
-<text text-anchor="start" x="630" y="-402.6" font-family="Times,serif" font-size="14.00">platform :List&lt;String&gt;</text>
-<text text-anchor="start" x="630" y="-385.8" font-family="Times,serif" font-size="14.00">note :List&lt;String&gt;</text>
+<polygon fill="none" stroke="black" points="645,-435 645,-457 778,-457 778,-435 645,-435"/>
+<text text-anchor="start" x="689.73" y="-441.4" font-family="Times,serif" font-size="14.00">Release</text>
+<polygon fill="none" stroke="black" points="645,-379 645,-435 778,-435 778,-379 645,-379"/>
+<text text-anchor="start" x="648" y="-419.4" font-family="Times,serif" font-size="14.00">year :int</text>
+<text text-anchor="start" x="648" y="-402.6" font-family="Times,serif" font-size="14.00">platform :List&lt;String&gt;</text>
+<text text-anchor="start" x="648" y="-385.8" font-family="Times,serif" font-size="14.00">note :List&lt;String&gt;</text>
 </g>
 <!-- Game&#45;&gt;Release -->
 <g id="edge5" class="edge">
 <title>Game&#45;&gt;Release</title>
-<path fill="none" stroke="black" d="M693,-271.66C693,-298.8 693,-342.47 693,-374.87"/>
-<text text-anchor="middle" x="660.53" y="-362.27" font-family="Times,serif" font-size="14.00">published *</text>
-<text text-anchor="middle" x="687.75" y="-275.86" font-family="Times,serif" font-size="14.00"> *</text>
+<path fill="none" stroke="black" d="M711,-271.66C711,-298.8 711,-342.47 711,-374.87"/>
+<text text-anchor="middle" x="678.53" y="-362.27" font-family="Times,serif" font-size="14.00">published *</text>
+<text text-anchor="middle" x="705.75" y="-275.86" font-family="Times,serif" font-size="14.00"> *</text>
 </g>
 <!-- Movie -->
 <g id="node5" class="node">
 <title>Movie</title>
-<polygon fill="none" stroke="black" points="499,-253.5 499,-275.5 594,-275.5 594,-253.5 499,-253.5"/>
-<text text-anchor="start" x="528.23" y="-259.9" font-family="Times,serif" font-size="14.00">Movie</text>
-<polygon fill="none" stroke="black" points="499,-214.5 499,-253.5 594,-253.5 594,-214.5 499,-214.5"/>
-<text text-anchor="start" x="502" y="-237.9" font-family="Times,serif" font-size="14.00">universe :String</text>
-<text text-anchor="start" x="502" y="-221.1" font-family="Times,serif" font-size="14.00">length :int</text>
+<polygon fill="none" stroke="black" points="517,-253.5 517,-275.5 612,-275.5 612,-253.5 517,-253.5"/>
+<text text-anchor="start" x="546.23" y="-259.9" font-family="Times,serif" font-size="14.00">Movie</text>
+<polygon fill="none" stroke="black" points="517,-214.5 517,-253.5 612,-253.5 612,-214.5 517,-214.5"/>
+<text text-anchor="start" x="520" y="-237.9" font-family="Times,serif" font-size="14.00">universe :String</text>
+<text text-anchor="start" x="520" y="-221.1" font-family="Times,serif" font-size="14.00">length :int</text>
 </g>
 <!-- Movie&#45;&gt;Basic -->
-<g id="edge20" class="edge">
+<g id="edge21" class="edge">
 <title>Movie&#45;&gt;Basic</title>
-<path fill="none" stroke="black" d="M502.71,-280.27C495.47,-285.87 488.03,-291.61 481,-297 456.7,-315.61 430.2,-335.69 405.93,-354"/>
-<polygon fill="none" stroke="black" points="403.66,-351.33 397.79,-360.14 407.88,-356.92 403.66,-351.33"/>
+<path fill="none" stroke="black" d="M521.64,-280.04C514.16,-285.78 506.4,-291.63 499,-297 469.2,-318.64 435.91,-341.53 406.32,-361.45"/>
+<polygon fill="none" stroke="black" points="404.02,-358.78 397.67,-367.26 407.93,-364.59 404.02,-358.78"/>
 </g>
 <!-- Movie&#45;&gt;Movie -->
-<g id="edge14" class="edge">
+<g id="edge15" class="edge">
 <title>Movie&#45;&gt;Movie</title>
-<path fill="none" stroke="black" d="M601.77,-222.38C612.17,-225.22 619.5,-232.93 619.5,-245.5 619.5,-258.07 612.17,-265.78 601.77,-268.62"/>
-<text text-anchor="middle" x="624.9" y="-272.82" font-family="Times,serif" font-size="14.00">sequel *</text>
-<text text-anchor="middle" x="628.01" y="-209.78" font-family="Times,serif" font-size="14.00">prequel *</text>
+<path fill="none" stroke="black" d="M619.77,-222.38C630.17,-225.22 637.5,-232.93 637.5,-245.5 637.5,-258.07 630.17,-265.78 619.77,-268.62"/>
+<text text-anchor="middle" x="642.9" y="-272.82" font-family="Times,serif" font-size="14.00">sequel *</text>
+<text text-anchor="middle" x="646.01" y="-209.78" font-family="Times,serif" font-size="14.00">prequel *</text>
 </g>
 <!-- Season -->
 <g id="node7" class="node">
@@ -129,13 +136,13 @@
 <text text-anchor="start" x="11" y="-82.8" font-family="Times,serif" font-size="14.00">lenSeason :float</text>
 </g>
 <!-- Season&#45;&gt;Basic -->
-<g id="edge21" class="edge">
+<g id="edge22" class="edge">
 <title>Season&#45;&gt;Basic</title>
 <path fill="none" stroke="black" d="M40.51,-158.04C24.64,-197.23 9.56,-255.67 37,-297 80.99,-363.26 169.51,-393.02 236.29,-406.33"/>
 <polygon fill="none" stroke="black" points="235.91,-409.82 246.39,-408.25 237.22,-402.95 235.91,-409.82"/>
 </g>
 <!-- Season&#45;&gt;Season -->
-<g id="edge15" class="edge">
+<g id="edge16" class="edge">
 <title>Season&#45;&gt;Season</title>
 <path fill="none" stroke="black" d="M122.28,-98.2C132.75,-100.49 140,-106.09 140,-115 140,-123.91 132.75,-129.51 122.28,-131.8"/>
 <text text-anchor="middle" x="145.41" y="-119.2" font-family="Times,serif" font-size="14.00">sequel *</text>
@@ -150,14 +157,14 @@
 <text text-anchor="start" x="57" y="-229.9" font-family="Times,serif" font-size="14.00">language :String</text>
 </g>
 <!-- Season&#45;&gt;Series -->
-<g id="edge16" class="edge">
+<g id="edge17" class="edge">
 <title>Season&#45;&gt;Series</title>
 <path fill="none" stroke="black" d="M74.75,-158.08C81.36,-178.28 89.05,-201.81 94.74,-219.22"/>
 <text text-anchor="middle" x="78.8" y="-206.62" font-family="Times,serif" font-size="14.00">series</text>
 <text text-anchor="middle" x="48.12" y="-162.28" font-family="Times,serif" font-size="14.00">seasons *</text>
 </g>
 <!-- Series&#45;&gt;Basic -->
-<g id="edge22" class="edge">
+<g id="edge23" class="edge">
 <title>Series&#45;&gt;Basic</title>
 <path fill="none" stroke="black" d="M135.31,-271.66C162.42,-292.76 202.35,-323.85 238.34,-351.86"/>
 <polygon fill="none" stroke="black" points="236.39,-354.78 246.43,-358.16 240.69,-349.26 236.39,-354.78"/>
@@ -228,16 +235,16 @@
 <!-- Watchlist&#45;&gt;Game -->
 <g id="edge3" class="edge">
 <title>Watchlist&#45;&gt;Game</title>
-<path fill="none" stroke="black" d="M441.84,-124.96C487.89,-136.79 567.17,-160.15 629,-194 641.79,-201 654.65,-210.54 665.45,-219.45"/>
-<text text-anchor="middle" x="699.47" y="-206.85" font-family="Times,serif" font-size="14.00">gamesList *</text>
-<text text-anchor="middle" x="447.09" y="-129.16" font-family="Times,serif" font-size="14.00"> *</text>
+<path fill="none" stroke="black" d="M441.88,-123.73C491.15,-134.75 578.95,-157.76 647,-194 659.87,-200.85 672.74,-210.37 683.53,-219.29"/>
+<text text-anchor="middle" x="717.55" y="-206.69" font-family="Times,serif" font-size="14.00">gamesList *</text>
+<text text-anchor="middle" x="447.13" y="-127.93" font-family="Times,serif" font-size="14.00"> *</text>
 </g>
 <!-- Watchlist&#45;&gt;Movie -->
 <g id="edge4" class="edge">
 <title>Watchlist&#45;&gt;Movie</title>
-<path fill="none" stroke="black" d="M422.86,-133.06C444.73,-152.86 481.34,-185.98 508.96,-210.98"/>
-<text text-anchor="middle" x="546.1" y="-198.38" font-family="Times,serif" font-size="14.00">MoviesList *</text>
-<text text-anchor="middle" x="417.61" y="-137.26" font-family="Times,serif" font-size="14.00"> *</text>
+<path fill="none" stroke="black" d="M425.25,-133.06C449.9,-152.86 491.14,-185.98 522.27,-210.98"/>
+<text text-anchor="middle" x="559.4" y="-198.38" font-family="Times,serif" font-size="14.00">MoviesList *</text>
+<text text-anchor="middle" x="420" y="-137.26" font-family="Times,serif" font-size="14.00"> *</text>
 </g>
 <!-- Watchlist&#45;&gt;Series -->
 <g id="edge6" class="edge">
