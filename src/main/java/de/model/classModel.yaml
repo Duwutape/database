@@ -1,0 +1,704 @@
+- c: 	org.fulib.classmodel.ClassModel
+  classes: 	book 	basic 	release 	game 	movie 	anime 	season 	series 	watchlist 	user
+  defaultCollectionType: 	c1
+  defaultPropertyStyle: 	POJO
+  defaultRoleType: 	"java.util.ArrayList<%s>"
+  mainJavaDir: 	"src/main/java"
+  packageName: 	de.model
+  packageSrcFolder: 	"src/main/java/de/model"
+
+- book: 	org.fulib.classmodel.Clazz
+  attributes: 	book_universe 	book_author 	book_date
+  model: 	c
+  modified: 	false
+  name: 	Book
+  propertyStyle: 	POJO
+  roles: 	book_Watchlist_booksList
+  superClass: 	basic
+
+- basic: 	org.fulib.classmodel.Clazz
+  attributes: 	basic_alias 	basic_nameOV 	basic_nameGer 	basic_yearOV 	basic_yearGer 	basic_fsk 	basic_genre 	basic_paltform
+  model: 	c
+  modified: 	false
+  name: 	Basic
+  propertyStyle: 	POJO
+  subClasses: 	book 	game 	movie 	anime 	season 	series
+
+- release: 	org.fulib.classmodel.Clazz
+  attributes: 	release_year 	release_platform 	release_note
+  model: 	c
+  modified: 	false
+  name: 	Release
+  propertyStyle: 	POJO
+  roles: 	release_Game_published
+
+- game: 	org.fulib.classmodel.Clazz
+  attributes: 	game_universe
+  model: 	c
+  modified: 	false
+  name: 	Game
+  propertyStyle: 	POJO
+  roles: 	game_prequel 	game_sequel 	game_published 	game_Watchlist_gamesList
+  superClass: 	basic
+
+- movie: 	org.fulib.classmodel.Clazz
+  attributes: 	movie_universe 	movie_length
+  model: 	c
+  modified: 	false
+  name: 	Movie
+  propertyStyle: 	POJO
+  roles: 	movie_prequel 	movie_sequel 	movie_Watchlist_MoviesList
+  superClass: 	basic
+
+- anime: 	org.fulib.classmodel.Clazz
+  attributes: 	anime_nameEng 	anime_numEpisodes 	anime_lenEpisodes 	anime_lenAnime
+  model: 	c
+  modified: 	false
+  name: 	Anime
+  propertyStyle: 	POJO
+  roles: 	anime_prequel 	anime_sequel 	anime_Watchlist_animeList
+  superClass: 	basic
+
+- season: 	org.fulib.classmodel.Clazz
+  attributes: 	season_numEpisodes 	season_lenEpisodes 	season_lenSeason
+  model: 	c
+  modified: 	false
+  name: 	Season
+  propertyStyle: 	POJO
+  roles: 	season_prequel 	season_sequel 	season_series
+  superClass: 	basic
+
+- series: 	org.fulib.classmodel.Clazz
+  attributes: 	series_language
+  model: 	c
+  modified: 	false
+  name: 	Series
+  propertyStyle: 	POJO
+  roles: 	series_seasons 	series_Watchlist_seriesList
+  superClass: 	basic
+
+- watchlist: 	org.fulib.classmodel.Clazz
+  model: 	c
+  modified: 	false
+  name: 	Watchlist
+  propertyStyle: 	POJO
+  roles: 	watchlist_seriesList 	watchlist_animeList 	watchlist_MoviesList 	watchlist_gamesList 	watchlist_booksList 	watchlist_User_completed 	watchlist_User_currently 	watchlist_User_hold 	watchlist_User_unsure 	watchlist_User_dropped
+
+- user: 	org.fulib.classmodel.Clazz
+  model: 	c
+  modified: 	false
+  name: 	User
+  propertyStyle: 	POJO
+  roles: 	user_completed 	user_currently 	user_hold 	user_unsure 	user_dropped
+
+- c1: 	org.fulib.classmodel.CollectionType
+  implClass: 	class java.util.ArrayList
+  implTemplate: 	"java.util.ArrayList<%s>"
+  itf: 	org.fulib.classmodel.CollectionInterface.List
+  qualifiedImplName: 	java.util.ArrayList
+  simpleImplName: 	ArrayList
+
+- book_universe: 	org.fulib.classmodel.Attribute
+  clazz: 	book
+  id: 	Book_universe
+  modified: 	false
+  name: 	universe
+  propertyStyle: 	POJO
+  type: 	String
+  typeSignature: 	String
+
+- book_author: 	org.fulib.classmodel.Attribute
+  clazz: 	book
+  collectionType: 	c1
+  id: 	Book_author
+  modified: 	false
+  name: 	author
+  propertyStyle: 	POJO
+  type: 	String
+  typeSignature: 	String
+
+- book_date: 	org.fulib.classmodel.Attribute
+  clazz: 	book
+  id: 	Book_date
+  modified: 	false
+  name: 	date
+  propertyStyle: 	POJO
+  type: 	"import(java.util.Date)"
+  typeSignature: 	Date
+
+- book_Watchlist_booksList: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	book
+  collectionType: 	c1
+  id: 	Book_Watchlist_booksList
+  modified: 	false
+  other: 	watchlist_booksList
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- basic_alias: 	org.fulib.classmodel.Attribute
+  clazz: 	basic
+  collectionType: 	c1
+  id: 	Basic_alias
+  modified: 	false
+  name: 	alias
+  propertyStyle: 	POJO
+  type: 	String
+  typeSignature: 	String
+
+- basic_nameOV: 	org.fulib.classmodel.Attribute
+  clazz: 	basic
+  id: 	Basic_nameOV
+  modified: 	false
+  name: 	nameOV
+  propertyStyle: 	POJO
+  type: 	String
+  typeSignature: 	String
+
+- basic_nameGer: 	org.fulib.classmodel.Attribute
+  clazz: 	basic
+  id: 	Basic_nameGer
+  modified: 	false
+  name: 	nameGer
+  propertyStyle: 	POJO
+  type: 	String
+  typeSignature: 	String
+
+- basic_yearOV: 	org.fulib.classmodel.Attribute
+  clazz: 	basic
+  collectionType: 	c1
+  id: 	Basic_yearOV
+  modified: 	false
+  name: 	yearOV
+  propertyStyle: 	POJO
+  type: 	Integer
+  typeSignature: 	Integer
+
+- basic_yearGer: 	org.fulib.classmodel.Attribute
+  clazz: 	basic
+  collectionType: 	c1
+  id: 	Basic_yearGer
+  modified: 	false
+  name: 	yearGer
+  propertyStyle: 	POJO
+  type: 	Integer
+  typeSignature: 	Integer
+
+- basic_fsk: 	org.fulib.classmodel.Attribute
+  clazz: 	basic
+  id: 	Basic_fsk
+  modified: 	false
+  name: 	fsk
+  propertyStyle: 	POJO
+  type: 	int
+  typeSignature: 	int
+
+- basic_genre: 	org.fulib.classmodel.Attribute
+  clazz: 	basic
+  collectionType: 	c1
+  id: 	Basic_genre
+  modified: 	false
+  name: 	genre
+  propertyStyle: 	POJO
+  type: 	String
+  typeSignature: 	String
+
+- basic_paltform: 	org.fulib.classmodel.Attribute
+  clazz: 	basic
+  collectionType: 	c1
+  id: 	Basic_paltform
+  modified: 	false
+  name: 	paltform
+  propertyStyle: 	POJO
+  type: 	String
+  typeSignature: 	String
+
+- release_year: 	org.fulib.classmodel.Attribute
+  clazz: 	release
+  id: 	Release_year
+  modified: 	false
+  name: 	year
+  propertyStyle: 	POJO
+  type: 	int
+  typeSignature: 	int
+
+- release_platform: 	org.fulib.classmodel.Attribute
+  clazz: 	release
+  collectionType: 	c1
+  id: 	Release_platform
+  modified: 	false
+  name: 	platform
+  propertyStyle: 	POJO
+  type: 	String
+  typeSignature: 	String
+
+- release_note: 	org.fulib.classmodel.Attribute
+  clazz: 	release
+  collectionType: 	c1
+  id: 	Release_note
+  modified: 	false
+  name: 	note
+  propertyStyle: 	POJO
+  type: 	String
+  typeSignature: 	String
+
+- release_Game_published: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	release
+  collectionType: 	c1
+  id: 	Release_Game_published
+  modified: 	false
+  other: 	game_published
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- game_universe: 	org.fulib.classmodel.Attribute
+  clazz: 	game
+  id: 	Game_universe
+  modified: 	false
+  name: 	universe
+  propertyStyle: 	POJO
+  type: 	String
+  typeSignature: 	String
+
+- game_prequel: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	game
+  collectionType: 	c1
+  id: 	Game_prequel
+  modified: 	false
+  name: 	prequel
+  other: 	game_sequel
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- game_sequel: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	game
+  collectionType: 	c1
+  id: 	Game_sequel
+  modified: 	false
+  name: 	sequel
+  other: 	game_prequel
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- game_published: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	game
+  collectionType: 	c1
+  id: 	Game_published
+  modified: 	false
+  name: 	published
+  other: 	release_Game_published
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- game_Watchlist_gamesList: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	game
+  collectionType: 	c1
+  id: 	Game_Watchlist_gamesList
+  modified: 	false
+  other: 	watchlist_gamesList
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- movie_universe: 	org.fulib.classmodel.Attribute
+  clazz: 	movie
+  id: 	Movie_universe
+  modified: 	false
+  name: 	universe
+  propertyStyle: 	POJO
+  type: 	String
+  typeSignature: 	String
+
+- movie_length: 	org.fulib.classmodel.Attribute
+  clazz: 	movie
+  id: 	Movie_length
+  modified: 	false
+  name: 	length
+  propertyStyle: 	POJO
+  type: 	int
+  typeSignature: 	int
+
+- movie_prequel: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	movie
+  collectionType: 	c1
+  id: 	Movie_prequel
+  modified: 	false
+  name: 	prequel
+  other: 	movie_sequel
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- movie_sequel: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	movie
+  collectionType: 	c1
+  id: 	Movie_sequel
+  modified: 	false
+  name: 	sequel
+  other: 	movie_prequel
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- movie_Watchlist_MoviesList: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	movie
+  collectionType: 	c1
+  id: 	Movie_Watchlist_MoviesList
+  modified: 	false
+  other: 	watchlist_MoviesList
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- anime_nameEng: 	org.fulib.classmodel.Attribute
+  clazz: 	anime
+  id: 	Anime_nameEng
+  modified: 	false
+  name: 	nameEng
+  propertyStyle: 	POJO
+  type: 	String
+  typeSignature: 	String
+
+- anime_numEpisodes: 	org.fulib.classmodel.Attribute
+  clazz: 	anime
+  id: 	Anime_numEpisodes
+  modified: 	false
+  name: 	numEpisodes
+  propertyStyle: 	POJO
+  type: 	int
+  typeSignature: 	int
+
+- anime_lenEpisodes: 	org.fulib.classmodel.Attribute
+  clazz: 	anime
+  id: 	Anime_lenEpisodes
+  modified: 	false
+  name: 	lenEpisodes
+  propertyStyle: 	POJO
+  type: 	float
+  typeSignature: 	float
+
+- anime_lenAnime: 	org.fulib.classmodel.Attribute
+  clazz: 	anime
+  id: 	Anime_lenAnime
+  modified: 	false
+  name: 	lenAnime
+  propertyStyle: 	POJO
+  type: 	float
+  typeSignature: 	float
+
+- anime_prequel: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	anime
+  collectionType: 	c1
+  id: 	Anime_prequel
+  modified: 	false
+  name: 	prequel
+  other: 	anime_sequel
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- anime_sequel: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	anime
+  collectionType: 	c1
+  id: 	Anime_sequel
+  modified: 	false
+  name: 	sequel
+  other: 	anime_prequel
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- anime_Watchlist_animeList: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	anime
+  collectionType: 	c1
+  id: 	Anime_Watchlist_animeList
+  modified: 	false
+  other: 	watchlist_animeList
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- season_numEpisodes: 	org.fulib.classmodel.Attribute
+  clazz: 	season
+  id: 	Season_numEpisodes
+  modified: 	false
+  name: 	numEpisodes
+  propertyStyle: 	POJO
+  type: 	int
+  typeSignature: 	int
+
+- season_lenEpisodes: 	org.fulib.classmodel.Attribute
+  clazz: 	season
+  id: 	Season_lenEpisodes
+  modified: 	false
+  name: 	lenEpisodes
+  propertyStyle: 	POJO
+  type: 	float
+  typeSignature: 	float
+
+- season_lenSeason: 	org.fulib.classmodel.Attribute
+  clazz: 	season
+  id: 	Season_lenSeason
+  modified: 	false
+  name: 	lenSeason
+  propertyStyle: 	POJO
+  type: 	float
+  typeSignature: 	float
+
+- season_prequel: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	season
+  collectionType: 	c1
+  id: 	Season_prequel
+  modified: 	false
+  name: 	prequel
+  other: 	season_sequel
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- season_sequel: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	season
+  collectionType: 	c1
+  id: 	Season_sequel
+  modified: 	false
+  name: 	sequel
+  other: 	season_prequel
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- season_series: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	1
+  clazz: 	season
+  id: 	Season_series
+  modified: 	false
+  name: 	series
+  other: 	series_seasons
+  propertyStyle: 	POJO
+
+- series_language: 	org.fulib.classmodel.Attribute
+  clazz: 	series
+  id: 	Series_language
+  modified: 	false
+  name: 	language
+  propertyStyle: 	POJO
+  type: 	String
+  typeSignature: 	String
+
+- series_seasons: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	series
+  collectionType: 	c1
+  id: 	Series_seasons
+  modified: 	false
+  name: 	seasons
+  other: 	season_series
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- series_Watchlist_seriesList: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	series
+  collectionType: 	c1
+  id: 	Series_Watchlist_seriesList
+  modified: 	false
+  other: 	watchlist_seriesList
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlist_seriesList: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlist
+  collectionType: 	c1
+  id: 	Watchlist_seriesList
+  modified: 	false
+  name: 	seriesList
+  other: 	series_Watchlist_seriesList
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlist_animeList: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlist
+  collectionType: 	c1
+  id: 	Watchlist_animeList
+  modified: 	false
+  name: 	animeList
+  other: 	anime_Watchlist_animeList
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlist_MoviesList: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlist
+  collectionType: 	c1
+  id: 	Watchlist_MoviesList
+  modified: 	false
+  name: 	MoviesList
+  other: 	movie_Watchlist_MoviesList
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlist_gamesList: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlist
+  collectionType: 	c1
+  id: 	Watchlist_gamesList
+  modified: 	false
+  name: 	gamesList
+  other: 	game_Watchlist_gamesList
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlist_booksList: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlist
+  collectionType: 	c1
+  id: 	Watchlist_booksList
+  modified: 	false
+  name: 	booksList
+  other: 	book_Watchlist_booksList
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlist_User_completed: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	watchlist
+  collectionType: 	c1
+  id: 	Watchlist_User_completed
+  modified: 	false
+  other: 	user_completed
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlist_User_currently: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	watchlist
+  collectionType: 	c1
+  id: 	Watchlist_User_currently
+  modified: 	false
+  other: 	user_currently
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlist_User_hold: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	watchlist
+  collectionType: 	c1
+  id: 	Watchlist_User_hold
+  modified: 	false
+  other: 	user_hold
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlist_User_unsure: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	watchlist
+  collectionType: 	c1
+  id: 	Watchlist_User_unsure
+  modified: 	false
+  other: 	user_unsure
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlist_User_dropped: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	watchlist
+  collectionType: 	c1
+  id: 	Watchlist_User_dropped
+  modified: 	false
+  other: 	user_dropped
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- user_completed: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	user
+  collectionType: 	c1
+  id: 	User_completed
+  modified: 	false
+  name: 	completed
+  other: 	watchlist_User_completed
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- user_currently: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	user
+  collectionType: 	c1
+  id: 	User_currently
+  modified: 	false
+  name: 	currently
+  other: 	watchlist_User_currently
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- user_hold: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	user
+  collectionType: 	c1
+  id: 	User_hold
+  modified: 	false
+  name: 	hold
+  other: 	watchlist_User_hold
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- user_unsure: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	user
+  collectionType: 	c1
+  id: 	User_unsure
+  modified: 	false
+  name: 	unsure
+  other: 	watchlist_User_unsure
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- user_dropped: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	user
+  collectionType: 	c1
+  id: 	User_dropped
+  modified: 	false
+  name: 	dropped
+  other: 	watchlist_User_dropped
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
