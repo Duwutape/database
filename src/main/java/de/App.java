@@ -1,7 +1,7 @@
 package de;
 
 import de.controller.Controller;
-import de.controller.LoginController;
+import de.controller.MenuController;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -19,7 +19,7 @@ public class App extends Application {
         primaryStage.setScene(new Scene(new Label("Loading...")));
         primaryStage.setTitle("Database");
 
-        show(new LoginController(this));
+        show(new MenuController(this));
         primaryStage.show();
 
         primaryStage.setOnCloseRequest(e -> controller.destroy());

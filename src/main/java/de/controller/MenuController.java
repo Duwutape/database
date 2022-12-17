@@ -5,6 +5,7 @@ import de.Main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
@@ -26,15 +27,18 @@ public class MenuController implements Controller {
 
     @Override
     public Parent render() throws IOException {
-        // Load FXML
+
+        // load FXML
         final Parent parent = FXMLLoader.load(Main.class.getResource("view/Menu.fxml"));
 
-        // Lookup Leave button
-        final Button userButton = (Button) parent.lookup("#userButton");
+        // lookup elements
+        final TextField searchBar = (TextField) parent.lookup("#searchBar");
+        final Button searchButton = (Button) parent.lookup("#searchButton");
+        final Button watchlistButton = (Button) parent.lookup("#watchlistButton");
 
-        // Set action
-        userButton.setOnAction(action -> {
-            app.show(new UserController(app));
+        // set actions
+        watchlistButton.setOnAction(action -> {
+            app.show(new WatchlistController(app));
         });
 
         return parent;

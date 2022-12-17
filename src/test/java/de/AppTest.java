@@ -25,34 +25,6 @@ public class AppTest extends ApplicationTest
 	@Test
 	public void changeView()
 	{
-		// check window name
-		assertEquals("Database - Login", stage.getTitle());
-
-		// click on start button
-		clickOn("#loginButton");
-
-		// check window name
-		assertEquals("Database - Menu", stage.getTitle());
-
-		// set window size so that everything is visible
-		stage.setWidth(640);
-		stage.setHeight(420);
-		sleep(1000);
-
-		// click on user button
-		clickOn("#userButton");
-
-		// check window name
-		assertEquals("Database - User", stage.getTitle());
-
-		// set window size so that everything is visible
-		stage.setWidth(154);
-		stage.setHeight(200);
-		sleep(1000);
-
-		// click on logout button
-		clickOn("#logoutButton");
-
 
 	}
 }
