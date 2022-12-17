@@ -44,10 +44,10 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
-            <TextField fx:id="inputname" layoutX="92.0" layoutY="20.0" promptText="Name" />
-            <PasswordField fx:id="inputPassword" layoutX="92.0" layoutY="65.0" promptText="*******" />
             <Label layoutY="24.0" text="New Username" />
+            <TextField fx:id="inputname" layoutX="92.0" layoutY="20.0" promptText="Name" />
             <Label layoutY="62.0" prefWidth="82.0" text="Input Password to confirm" wrapText="true" />
+            <PasswordField fx:id="inputPassword" layoutX="92.0" layoutY="65.0" promptText="*******" />
             <Button fx:id="saveButton" layoutX="100.0" layoutY="115.0" mnemonicParsing="false" text="Save" />
          </children>
          <VBox.margin>
