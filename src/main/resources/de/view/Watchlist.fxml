@@ -61,20 +61,11 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="aboutButton" layoutX="520.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                  <Button fx:id="aboutButton" layoutX="560.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../icons8-info-24.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button fx:id="watchlistButton" layoutX="560.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
-                           <image>
-                              <Image url="@../../icons8-bookmark-24.png" />
                            </image>
                         </ImageView>
                      </graphic>

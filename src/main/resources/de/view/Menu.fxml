@@ -55,20 +55,20 @@
                <children>
                   <TextField fx:id="searchBar" layoutX="50.0" layoutY="4.0" prefHeight="25.0" prefWidth="225.0" promptText="Search" />
                   <Button fx:id="searchButton" defaultButton="true" layoutX="290.0" layoutY="4.0" mnemonicParsing="false" text="Search" />
-                  <Button fx:id="infoButton" layoutX="540.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: transparent;">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../icons8-info-24.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button fx:id="watchlistButton" layoutX="580.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: transparent;">
+                  <Button fx:id="watchlistButton" layoutX="540.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: transparent;">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../icons8-bookmark-24.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="infoButton" layoutX="580.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../icons8-info-24.png" />
                            </image>
                         </ImageView>
                      </graphic>
