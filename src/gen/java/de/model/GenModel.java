@@ -4,7 +4,6 @@ import org.fulib.builder.ClassModelDecorator;
 import org.fulib.builder.ClassModelManager;
 import org.fulib.builder.reflect.Link;
 
-import javax.imageio.plugins.tiff.ExifGPSTagSet;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -45,7 +44,7 @@ public class GenModel implements ClassModelDecorator {
         ArrayList<Integer> yearGer;
         int fsk;
         ArrayList<String> genre;
-        ArrayList<String> paltform;
+        ArrayList<String> platform;
     }
 
     class Series extends Basic{

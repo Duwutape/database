@@ -17,7 +17,7 @@
   superClass: 	basic
 
 - basic: 	org.fulib.classmodel.Clazz
-  attributes: 	basic_alias 	basic_nameOV 	basic_nameGer 	basic_yearOV 	basic_yearGer 	basic_fsk 	basic_genre 	basic_paltform
+  attributes: 	basic_alias 	basic_nameOV 	basic_nameGer 	basic_yearOV 	basic_yearGer 	basic_fsk 	basic_genre 	basic_platform
   model: 	c
   modified: 	false
   name: 	Basic
@@ -204,12 +204,12 @@
   type: 	String
   typeSignature: 	String
 
-- basic_paltform: 	org.fulib.classmodel.Attribute
+- basic_platform: 	org.fulib.classmodel.Attribute
   clazz: 	basic
   collectionType: 	c1
-  id: 	Basic_paltform
+  id: 	Basic_platform
   modified: 	false
-  name: 	paltform
+  name: 	platform
   propertyStyle: 	POJO
   type: 	String
   typeSignature: 	String

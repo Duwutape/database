@@ -14,7 +14,7 @@ public class Basic
    public static final String PROPERTY_YEAR_GER = "yearGer";
    public static final String PROPERTY_FSK = "fsk";
    public static final String PROPERTY_GENRE = "genre";
-   public static final String PROPERTY_PALTFORM = "paltform";
+   public static final String PROPERTY_PLATFORM = "platform";
    private List<String> alias;
    private String nameOV;
    private String nameGer;
@@ -22,7 +22,7 @@ public class Basic
    private List<Integer> yearGer;
    private int fsk;
    private List<String> genre;
-   private List<String> paltform;
+   private List<String> platform;
 
    public List<String> getAlias()
    {
@@ -277,57 +277,57 @@ public class Basic
       return this;
    }
 
-   public List<String> getPaltform()
+   public List<String> getPlatform()
    {
-      return this.paltform != null ? Collections.unmodifiableList(this.paltform) : Collections.emptyList();
+      return this.platform != null ? Collections.unmodifiableList(this.platform) : Collections.emptyList();
    }
 
-   public Basic withPaltform(String value)
+   public Basic withPlatform(String value)
    {
-      if (this.paltform == null)
+      if (this.platform == null)
       {
-         this.paltform = new ArrayList<>();
+         this.platform = new ArrayList<>();
       }
-      this.paltform.add(value);
+      this.platform.add(value);
       return this;
    }
 
-   public Basic withPaltform(String... value)
+   public Basic withPlatform(String... value)
    {
-      this.withPaltform(Arrays.asList(value));
+      this.withPlatform(Arrays.asList(value));
       return this;
    }
 
-   public Basic withPaltform(Collection<? extends String> value)
+   public Basic withPlatform(Collection<? extends String> value)
    {
-      if (this.paltform == null)
+      if (this.platform == null)
       {
-         this.paltform = new ArrayList<>(value);
+         this.platform = new ArrayList<>(value);
       }
       else
       {
-         this.paltform.addAll(value);
+         this.platform.addAll(value);
       }
       return this;
    }
 
-   public Basic withoutPaltform(String value)
+   public Basic withoutPlatform(String value)
    {
-      this.paltform.removeAll(Collections.singleton(value));
+      this.platform.removeAll(Collections.singleton(value));
       return this;
    }
 
-   public Basic withoutPaltform(String... value)
+   public Basic withoutPlatform(String... value)
    {
-      this.withoutPaltform(Arrays.asList(value));
+      this.withoutPlatform(Arrays.asList(value));
       return this;
    }
 
-   public Basic withoutPaltform(Collection<? extends String> value)
+   public Basic withoutPlatform(Collection<? extends String> value)
    {
-      if (this.paltform != null)
+      if (this.platform != null)
       {
-         this.paltform.removeAll(value);
+         this.platform.removeAll(value);
       }
       return this;
    }
@@ -340,7 +340,7 @@ public class Basic
       result.append(' ').append(this.getNameOV());
       result.append(' ').append(this.getNameGer());
       result.append(' ').append(this.getGenre());
-      result.append(' ').append(this.getPaltform());
+      result.append(' ').append(this.getPlatform());
       return result.substring(1);
    }
 }
