@@ -55,6 +55,10 @@ public class MenuController implements Controller {
         //set listener
 
         // set actions
+        searchButton.setOnAction(action -> {
+            final String search = searchBar.getText();
+            final String type = choiceBox.getValue().toString();
+        });
 
         watchlistButton.setOnAction(action -> {
             app.show(new WatchlistController(app, user, codeService));
@@ -70,4 +74,5 @@ public class MenuController implements Controller {
     @Override
     public void destroy() {
     }
+
 }
