@@ -1,5 +1,5 @@
 - c: 	org.fulib.classmodel.ClassModel
-  classes: 	book 	allBook 	release 	game 	allGame 	movie 	allMovie 	anime 	allAnime 	season 	series 	allSeries
+  classes: 	book 	allBook 	release 	game 	allGame 	movie 	allMovie 	anime 	allAnime 	season 	series 	allSeries 	watchlistDrop 	watchlistUnsure 	watchlistHold 	watchlistCurr 	watchlistCom 	user
   defaultCollectionType: 	c1
   defaultPropertyStyle: 	POJO
   defaultRoleType: 	"java.util.ArrayList<%s>"
@@ -13,7 +13,7 @@
   modified: 	false
   name: 	Book
   propertyStyle: 	POJO
-  roles: 	book_prequel 	book_sequel 	book_AllBook_bookList
+  roles: 	book_prequel 	book_sequel 	book_AllBook_bookList 	book_WatchlistDrop_droppedBook 	book_WatchlistUnsure_unsureBook 	book_WatchlistHold_holdBook 	book_WatchlistCurr_currentBook 	book_WatchlistCom_completedBook
 
 - allBook: 	org.fulib.classmodel.Clazz
   model: 	c
@@ -36,7 +36,7 @@
   modified: 	false
   name: 	Game
   propertyStyle: 	POJO
-  roles: 	game_prequel 	game_sequel 	game_published 	game_AllGame_gameList
+  roles: 	game_prequel 	game_sequel 	game_published 	game_AllGame_gameList 	game_WatchlistDrop_droppedGame 	game_WatchlistUnsure_unsureGame 	game_WatchlistHold_holdGame 	game_WatchlistCurr_currentGame 	game_WatchlistCom_completedGame
 
 - allGame: 	org.fulib.classmodel.Clazz
   model: 	c
@@ -51,7 +51,7 @@
   modified: 	false
   name: 	Movie
   propertyStyle: 	POJO
-  roles: 	movie_prequel 	movie_sequel 	movie_AllMovie_movieList
+  roles: 	movie_prequel 	movie_sequel 	movie_AllMovie_movieList 	movie_WatchlistDrop_droppedMovie 	movie_WatchlistUnsure_unsureMovie 	movie_WatchlistHold_holdMovie 	movie_WatchlistCurr_currentMovie 	movie_WatchlistCom_completedMovie
 
 - allMovie: 	org.fulib.classmodel.Clazz
   model: 	c
@@ -66,7 +66,7 @@
   modified: 	false
   name: 	Anime
   propertyStyle: 	POJO
-  roles: 	anime_prequel 	anime_sequel 	anime_AllAnime_animeList
+  roles: 	anime_prequel 	anime_sequel 	anime_AllAnime_animeList 	anime_WatchlistDrop_droppedAnime 	anime_WatchlistUnsure_unsureAnime 	anime_WatchlistHold_holdAnime 	anime_WatchlistCurr_currentAnime 	anime_WatchlistCom_completedAnime
 
 - allAnime: 	org.fulib.classmodel.Clazz
   model: 	c
@@ -89,7 +89,7 @@
   modified: 	false
   name: 	Series
   propertyStyle: 	POJO
-  roles: 	series_seasons 	series_AllSeries_seriesList
+  roles: 	series_seasons 	series_AllSeries_seriesList 	series_WatchlistDrop_droppedSeries 	series_WatchlistUnsure_unsureSeries 	series_WatchlistHold_holdSeries 	series_WatchlistCurr_currentSeries 	series_WatchlistCom_completedSeries
 
 - allSeries: 	org.fulib.classmodel.Clazz
   model: 	c
@@ -97,6 +97,48 @@
   name: 	AllSeries
   propertyStyle: 	POJO
   roles: 	allSeries_seriesList
+
+- watchlistDrop: 	org.fulib.classmodel.Clazz
+  model: 	c
+  modified: 	false
+  name: 	WatchlistDrop
+  propertyStyle: 	POJO
+  roles: 	watchlistDrop_droppedSeries 	watchlistDrop_droppedAnime 	watchlistDrop_droppedMovie 	watchlistDrop_droppedGame 	watchlistDrop_droppedBook 	watchlistDrop_User_dropped
+
+- watchlistUnsure: 	org.fulib.classmodel.Clazz
+  model: 	c
+  modified: 	false
+  name: 	WatchlistUnsure
+  propertyStyle: 	POJO
+  roles: 	watchlistUnsure_unsureSeries 	watchlistUnsure_unsureAnime 	watchlistUnsure_unsureMovie 	watchlistUnsure_unsureGame 	watchlistUnsure_unsureBook 	watchlistUnsure_User_unsure
+
+- watchlistHold: 	org.fulib.classmodel.Clazz
+  model: 	c
+  modified: 	false
+  name: 	WatchlistHold
+  propertyStyle: 	POJO
+  roles: 	watchlistHold_holdSeries 	watchlistHold_holdAnime 	watchlistHold_holdMovie 	watchlistHold_holdGame 	watchlistHold_holdBook 	watchlistHold_User_hold
+
+- watchlistCurr: 	org.fulib.classmodel.Clazz
+  model: 	c
+  modified: 	false
+  name: 	WatchlistCurr
+  propertyStyle: 	POJO
+  roles: 	watchlistCurr_currentSeries 	watchlistCurr_currentAnime 	watchlistCurr_currentMovie 	watchlistCurr_currentGame 	watchlistCurr_currentBook 	watchlistCurr_User_currently
+
+- watchlistCom: 	org.fulib.classmodel.Clazz
+  model: 	c
+  modified: 	false
+  name: 	WatchlistCom
+  propertyStyle: 	POJO
+  roles: 	watchlistCom_completedSeries 	watchlistCom_completedAnime 	watchlistCom_completedMovie 	watchlistCom_completedGame 	watchlistCom_completedBook 	watchlistCom_User_completed
+
+- user: 	org.fulib.classmodel.Clazz
+  model: 	c
+  modified: 	false
+  name: 	User
+  propertyStyle: 	POJO
+  roles: 	user_completed 	user_currently 	user_hold 	user_unsure 	user_dropped
 
 - c1: 	org.fulib.classmodel.CollectionType
   implClass: 	class java.util.ArrayList
@@ -193,6 +235,61 @@
   id: 	Book_AllBook_bookList
   modified: 	false
   other: 	allBook_bookList
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- book_WatchlistDrop_droppedBook: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	book
+  collectionType: 	c1
+  id: 	Book_WatchlistDrop_droppedBook
+  modified: 	false
+  other: 	watchlistDrop_droppedBook
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- book_WatchlistUnsure_unsureBook: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	book
+  collectionType: 	c1
+  id: 	Book_WatchlistUnsure_unsureBook
+  modified: 	false
+  other: 	watchlistUnsure_unsureBook
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- book_WatchlistHold_holdBook: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	book
+  collectionType: 	c1
+  id: 	Book_WatchlistHold_holdBook
+  modified: 	false
+  other: 	watchlistHold_holdBook
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- book_WatchlistCurr_currentBook: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	book
+  collectionType: 	c1
+  id: 	Book_WatchlistCurr_currentBook
+  modified: 	false
+  other: 	watchlistCurr_currentBook
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- book_WatchlistCom_completedBook: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	book
+  collectionType: 	c1
+  id: 	Book_WatchlistCom_completedBook
+  modified: 	false
+  other: 	watchlistCom_completedBook
   propertyStyle: 	POJO
   roleType: 	"java.util.ArrayList<%s>"
 
@@ -351,6 +448,61 @@
   propertyStyle: 	POJO
   roleType: 	"java.util.ArrayList<%s>"
 
+- game_WatchlistDrop_droppedGame: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	game
+  collectionType: 	c1
+  id: 	Game_WatchlistDrop_droppedGame
+  modified: 	false
+  other: 	watchlistDrop_droppedGame
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- game_WatchlistUnsure_unsureGame: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	game
+  collectionType: 	c1
+  id: 	Game_WatchlistUnsure_unsureGame
+  modified: 	false
+  other: 	watchlistUnsure_unsureGame
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- game_WatchlistHold_holdGame: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	game
+  collectionType: 	c1
+  id: 	Game_WatchlistHold_holdGame
+  modified: 	false
+  other: 	watchlistHold_holdGame
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- game_WatchlistCurr_currentGame: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	game
+  collectionType: 	c1
+  id: 	Game_WatchlistCurr_currentGame
+  modified: 	false
+  other: 	watchlistCurr_currentGame
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- game_WatchlistCom_completedGame: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	game
+  collectionType: 	c1
+  id: 	Game_WatchlistCom_completedGame
+  modified: 	false
+  other: 	watchlistCom_completedGame
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
 - allGame_gameList: 	org.fulib.classmodel.AssocRole
   aggregation: 	false
   cardinality: 	42
@@ -459,6 +611,61 @@
   id: 	Movie_AllMovie_movieList
   modified: 	false
   other: 	allMovie_movieList
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- movie_WatchlistDrop_droppedMovie: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	movie
+  collectionType: 	c1
+  id: 	Movie_WatchlistDrop_droppedMovie
+  modified: 	false
+  other: 	watchlistDrop_droppedMovie
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- movie_WatchlistUnsure_unsureMovie: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	movie
+  collectionType: 	c1
+  id: 	Movie_WatchlistUnsure_unsureMovie
+  modified: 	false
+  other: 	watchlistUnsure_unsureMovie
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- movie_WatchlistHold_holdMovie: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	movie
+  collectionType: 	c1
+  id: 	Movie_WatchlistHold_holdMovie
+  modified: 	false
+  other: 	watchlistHold_holdMovie
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- movie_WatchlistCurr_currentMovie: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	movie
+  collectionType: 	c1
+  id: 	Movie_WatchlistCurr_currentMovie
+  modified: 	false
+  other: 	watchlistCurr_currentMovie
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- movie_WatchlistCom_completedMovie: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	movie
+  collectionType: 	c1
+  id: 	Movie_WatchlistCom_completedMovie
+  modified: 	false
+  other: 	watchlistCom_completedMovie
   propertyStyle: 	POJO
   roleType: 	"java.util.ArrayList<%s>"
 
@@ -599,6 +806,61 @@
   id: 	Anime_AllAnime_animeList
   modified: 	false
   other: 	allAnime_animeList
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- anime_WatchlistDrop_droppedAnime: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	anime
+  collectionType: 	c1
+  id: 	Anime_WatchlistDrop_droppedAnime
+  modified: 	false
+  other: 	watchlistDrop_droppedAnime
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- anime_WatchlistUnsure_unsureAnime: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	anime
+  collectionType: 	c1
+  id: 	Anime_WatchlistUnsure_unsureAnime
+  modified: 	false
+  other: 	watchlistUnsure_unsureAnime
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- anime_WatchlistHold_holdAnime: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	anime
+  collectionType: 	c1
+  id: 	Anime_WatchlistHold_holdAnime
+  modified: 	false
+  other: 	watchlistHold_holdAnime
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- anime_WatchlistCurr_currentAnime: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	anime
+  collectionType: 	c1
+  id: 	Anime_WatchlistCurr_currentAnime
+  modified: 	false
+  other: 	watchlistCurr_currentAnime
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- anime_WatchlistCom_completedAnime: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	anime
+  collectionType: 	c1
+  id: 	Anime_WatchlistCom_completedAnime
+  modified: 	false
+  other: 	watchlistCom_completedAnime
   propertyStyle: 	POJO
   roleType: 	"java.util.ArrayList<%s>"
 
@@ -793,6 +1055,61 @@
   propertyStyle: 	POJO
   roleType: 	"java.util.ArrayList<%s>"
 
+- series_WatchlistDrop_droppedSeries: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	series
+  collectionType: 	c1
+  id: 	Series_WatchlistDrop_droppedSeries
+  modified: 	false
+  other: 	watchlistDrop_droppedSeries
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- series_WatchlistUnsure_unsureSeries: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	series
+  collectionType: 	c1
+  id: 	Series_WatchlistUnsure_unsureSeries
+  modified: 	false
+  other: 	watchlistUnsure_unsureSeries
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- series_WatchlistHold_holdSeries: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	series
+  collectionType: 	c1
+  id: 	Series_WatchlistHold_holdSeries
+  modified: 	false
+  other: 	watchlistHold_holdSeries
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- series_WatchlistCurr_currentSeries: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	series
+  collectionType: 	c1
+  id: 	Series_WatchlistCurr_currentSeries
+  modified: 	false
+  other: 	watchlistCurr_currentSeries
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- series_WatchlistCom_completedSeries: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	series
+  collectionType: 	c1
+  id: 	Series_WatchlistCom_completedSeries
+  modified: 	false
+  other: 	watchlistCom_completedSeries
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
 - allSeries_seriesList: 	org.fulib.classmodel.AssocRole
   aggregation: 	false
   cardinality: 	42
@@ -802,6 +1119,421 @@
   modified: 	false
   name: 	seriesList
   other: 	series_AllSeries_seriesList
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistDrop_droppedSeries: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistDrop
+  collectionType: 	c1
+  id: 	WatchlistDrop_droppedSeries
+  modified: 	false
+  name: 	droppedSeries
+  other: 	series_WatchlistDrop_droppedSeries
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistDrop_droppedAnime: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistDrop
+  collectionType: 	c1
+  id: 	WatchlistDrop_droppedAnime
+  modified: 	false
+  name: 	droppedAnime
+  other: 	anime_WatchlistDrop_droppedAnime
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistDrop_droppedMovie: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistDrop
+  collectionType: 	c1
+  id: 	WatchlistDrop_droppedMovie
+  modified: 	false
+  name: 	droppedMovie
+  other: 	movie_WatchlistDrop_droppedMovie
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistDrop_droppedGame: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistDrop
+  collectionType: 	c1
+  id: 	WatchlistDrop_droppedGame
+  modified: 	false
+  name: 	droppedGame
+  other: 	game_WatchlistDrop_droppedGame
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistDrop_droppedBook: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistDrop
+  collectionType: 	c1
+  id: 	WatchlistDrop_droppedBook
+  modified: 	false
+  name: 	droppedBook
+  other: 	book_WatchlistDrop_droppedBook
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistDrop_User_dropped: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	watchlistDrop
+  collectionType: 	c1
+  id: 	WatchlistDrop_User_dropped
+  modified: 	false
+  other: 	user_dropped
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistUnsure_unsureSeries: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistUnsure
+  collectionType: 	c1
+  id: 	WatchlistUnsure_unsureSeries
+  modified: 	false
+  name: 	unsureSeries
+  other: 	series_WatchlistUnsure_unsureSeries
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistUnsure_unsureAnime: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistUnsure
+  collectionType: 	c1
+  id: 	WatchlistUnsure_unsureAnime
+  modified: 	false
+  name: 	unsureAnime
+  other: 	anime_WatchlistUnsure_unsureAnime
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistUnsure_unsureMovie: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistUnsure
+  collectionType: 	c1
+  id: 	WatchlistUnsure_unsureMovie
+  modified: 	false
+  name: 	unsureMovie
+  other: 	movie_WatchlistUnsure_unsureMovie
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistUnsure_unsureGame: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistUnsure
+  collectionType: 	c1
+  id: 	WatchlistUnsure_unsureGame
+  modified: 	false
+  name: 	unsureGame
+  other: 	game_WatchlistUnsure_unsureGame
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistUnsure_unsureBook: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistUnsure
+  collectionType: 	c1
+  id: 	WatchlistUnsure_unsureBook
+  modified: 	false
+  name: 	unsureBook
+  other: 	book_WatchlistUnsure_unsureBook
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistUnsure_User_unsure: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	watchlistUnsure
+  collectionType: 	c1
+  id: 	WatchlistUnsure_User_unsure
+  modified: 	false
+  other: 	user_unsure
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistHold_holdSeries: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistHold
+  collectionType: 	c1
+  id: 	WatchlistHold_holdSeries
+  modified: 	false
+  name: 	holdSeries
+  other: 	series_WatchlistHold_holdSeries
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistHold_holdAnime: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistHold
+  collectionType: 	c1
+  id: 	WatchlistHold_holdAnime
+  modified: 	false
+  name: 	holdAnime
+  other: 	anime_WatchlistHold_holdAnime
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistHold_holdMovie: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistHold
+  collectionType: 	c1
+  id: 	WatchlistHold_holdMovie
+  modified: 	false
+  name: 	holdMovie
+  other: 	movie_WatchlistHold_holdMovie
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistHold_holdGame: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistHold
+  collectionType: 	c1
+  id: 	WatchlistHold_holdGame
+  modified: 	false
+  name: 	holdGame
+  other: 	game_WatchlistHold_holdGame
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistHold_holdBook: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistHold
+  collectionType: 	c1
+  id: 	WatchlistHold_holdBook
+  modified: 	false
+  name: 	holdBook
+  other: 	book_WatchlistHold_holdBook
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistHold_User_hold: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	watchlistHold
+  collectionType: 	c1
+  id: 	WatchlistHold_User_hold
+  modified: 	false
+  other: 	user_hold
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistCurr_currentSeries: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistCurr
+  collectionType: 	c1
+  id: 	WatchlistCurr_currentSeries
+  modified: 	false
+  name: 	currentSeries
+  other: 	series_WatchlistCurr_currentSeries
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistCurr_currentAnime: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistCurr
+  collectionType: 	c1
+  id: 	WatchlistCurr_currentAnime
+  modified: 	false
+  name: 	currentAnime
+  other: 	anime_WatchlistCurr_currentAnime
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistCurr_currentMovie: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistCurr
+  collectionType: 	c1
+  id: 	WatchlistCurr_currentMovie
+  modified: 	false
+  name: 	currentMovie
+  other: 	movie_WatchlistCurr_currentMovie
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistCurr_currentGame: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistCurr
+  collectionType: 	c1
+  id: 	WatchlistCurr_currentGame
+  modified: 	false
+  name: 	currentGame
+  other: 	game_WatchlistCurr_currentGame
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistCurr_currentBook: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistCurr
+  collectionType: 	c1
+  id: 	WatchlistCurr_currentBook
+  modified: 	false
+  name: 	currentBook
+  other: 	book_WatchlistCurr_currentBook
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistCurr_User_currently: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	watchlistCurr
+  collectionType: 	c1
+  id: 	WatchlistCurr_User_currently
+  modified: 	false
+  other: 	user_currently
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistCom_completedSeries: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistCom
+  collectionType: 	c1
+  id: 	WatchlistCom_completedSeries
+  modified: 	false
+  name: 	completedSeries
+  other: 	series_WatchlistCom_completedSeries
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistCom_completedAnime: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistCom
+  collectionType: 	c1
+  id: 	WatchlistCom_completedAnime
+  modified: 	false
+  name: 	completedAnime
+  other: 	anime_WatchlistCom_completedAnime
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistCom_completedMovie: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistCom
+  collectionType: 	c1
+  id: 	WatchlistCom_completedMovie
+  modified: 	false
+  name: 	completedMovie
+  other: 	movie_WatchlistCom_completedMovie
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistCom_completedGame: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistCom
+  collectionType: 	c1
+  id: 	WatchlistCom_completedGame
+  modified: 	false
+  name: 	completedGame
+  other: 	game_WatchlistCom_completedGame
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistCom_completedBook: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	watchlistCom
+  collectionType: 	c1
+  id: 	WatchlistCom_completedBook
+  modified: 	false
+  name: 	completedBook
+  other: 	book_WatchlistCom_completedBook
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- watchlistCom_User_completed: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	0
+  clazz: 	watchlistCom
+  collectionType: 	c1
+  id: 	WatchlistCom_User_completed
+  modified: 	false
+  other: 	user_completed
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- user_completed: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	user
+  collectionType: 	c1
+  id: 	User_completed
+  modified: 	false
+  name: 	completed
+  other: 	watchlistCom_User_completed
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- user_currently: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	user
+  collectionType: 	c1
+  id: 	User_currently
+  modified: 	false
+  name: 	currently
+  other: 	watchlistCurr_User_currently
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- user_hold: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	user
+  collectionType: 	c1
+  id: 	User_hold
+  modified: 	false
+  name: 	hold
+  other: 	watchlistHold_User_hold
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- user_unsure: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	user
+  collectionType: 	c1
+  id: 	User_unsure
+  modified: 	false
+  name: 	unsure
+  other: 	watchlistUnsure_User_unsure
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- user_dropped: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	user
+  collectionType: 	c1
+  id: 	User_dropped
+  modified: 	false
+  name: 	dropped
+  other: 	watchlistDrop_User_dropped
   propertyStyle: 	POJO
   roleType: 	"java.util.ArrayList<%s>"
 

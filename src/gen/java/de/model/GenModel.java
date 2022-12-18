@@ -5,36 +5,87 @@ import org.fulib.builder.ClassModelManager;
 import org.fulib.builder.reflect.Link;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 @SuppressWarnings("unused")
 public class GenModel implements ClassModelDecorator {
 
-    /*    class User {
-            @Link
-            ArrayList<Watchlist> completed;
-            @Link
-            ArrayList<Watchlist> currently;
-            @Link
-            ArrayList<Watchlist> hold;
-            @Link
-            ArrayList<Watchlist> unsure;
-            @Link
-            ArrayList<Watchlist> dropped;
-        }
+    class User {
+        @Link
+        ArrayList<WatchlistCom> completed;
+        @Link
+        ArrayList<WatchlistCurr> currently;
+        @Link
+        ArrayList<WatchlistHold> hold;
+        @Link
+        ArrayList<WatchlistUnsure> unsure;
+        @Link
+        ArrayList<WatchlistDrop> dropped;
+    }
 
-        class Watchlist{
-            @Link
-            ArrayList completed;
-            @Link
-            ArrayList currently;
-            @Link
-            ArrayList hold;
-            @Link
-            ArrayList unsure;
-            @Link
-            ArrayList dropped;
-        }*/
+    class WatchlistCom {
+        @Link
+        ArrayList<Series> completedSeries;
+        @Link
+        ArrayList<Anime> completedAnime;
+        @Link
+        ArrayList<Movie> completedMovie;
+        @Link
+        ArrayList<Game> completedGame;
+        @Link
+        ArrayList<Book> completedBook;
+    }
+
+    class WatchlistCurr {
+        @Link
+        ArrayList<Series> currentSeries;
+        @Link
+        ArrayList<Anime> currentAnime;
+        @Link
+        ArrayList<Movie> currentMovie;
+        @Link
+        ArrayList<Game> currentGame;
+        @Link
+        ArrayList<Book> currentBook;
+    }
+
+    class WatchlistHold {
+        @Link
+        ArrayList<Series> holdSeries;
+        @Link
+        ArrayList<Anime> holdAnime;
+        @Link
+        ArrayList<Movie> holdMovie;
+        @Link
+        ArrayList<Game> holdGame;
+        @Link
+        ArrayList<Book> holdBook;
+    }
+
+    class WatchlistUnsure {
+        @Link
+        ArrayList<Series> unsureSeries;
+        @Link
+        ArrayList<Anime> unsureAnime;
+        @Link
+        ArrayList<Movie> unsureMovie;
+        @Link
+        ArrayList<Game> unsureGame;
+        @Link
+        ArrayList<Book> unsureBook;
+    }
+
+    class WatchlistDrop {
+        @Link
+        ArrayList<Series> droppedSeries;
+        @Link
+        ArrayList<Anime> droppedAnime;
+        @Link
+        ArrayList<Movie> droppedMovie;
+        @Link
+        ArrayList<Game> droppedGame;
+        @Link
+        ArrayList<Book> droppedBook;
+    }
 
     class AllSeries {
         @Link
