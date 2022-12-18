@@ -10,20 +10,20 @@ public class Book
 {
    public static final String PROPERTY_UNIVERSE = "universe";
    public static final String PROPERTY_AUTHOR = "author";
-   public static final String PROPERTY_DATE = "date";
    public static final String PROPERTY_PREQUEL = "prequel";
    public static final String PROPERTY_SEQUEL = "sequel";
    public static final String PROPERTY_ALIAS = "alias";
    public static final String PROPERTY_NAME_OV = "nameOV";
    public static final String PROPERTY_NAME_GER = "nameGer";
+   public static final String PROPERTY_YEAR = "year";
    private String universe;
    private List<String> author;
-   private Date date;
    private List<Book> prequel;
    private List<Book> sequel;
    private List<String> alias;
    private String nameOV;
    private String nameGer;
+   private int year;
 
    public String getUniverse()
    {
@@ -88,17 +88,6 @@ public class Book
       {
          this.author.removeAll(value);
       }
-      return this;
-   }
-
-   public Date getDate()
-   {
-      return this.date;
-   }
-
-   public Book setDate(Date value)
-   {
-      this.date = value;
       return this;
    }
 
@@ -304,6 +293,17 @@ public class Book
    public Book setNameGer(String value)
    {
       this.nameGer = value;
+      return this;
+   }
+
+   public int getYear()
+   {
+      return this.year;
+   }
+
+   public Book setYear(int value)
+   {
+      this.year = value;
       return this;
    }
 

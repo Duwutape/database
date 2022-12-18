@@ -1,5 +1,5 @@
 - c: 	org.fulib.classmodel.ClassModel
-  classes: 	filterBook 	filterBasic 	filterGame 	filterMovie 	filterAnime 	filterSeries 	filterType
+  classes: 	filterBook 	filterGame 	filterMovie 	filterAnime 	filterSeries 	filterType
   defaultCollectionType: 	c1
   defaultPropertyStyle: 	POJO
   defaultRoleType: 	"java.util.ArrayList<%s>"
@@ -8,51 +8,39 @@
   packageSrcFolder: 	"src/main/java/de/filter"
 
 - filterBook: 	org.fulib.classmodel.Clazz
-  attributes: 	filterBook_filterUniverse 	filterBook_filterAuthor
+  attributes: 	filterBook_filterUniverse 	filterBook_filterAuthor 	filterBook_filterYear
   model: 	c
   modified: 	false
   name: 	FilterBook
   propertyStyle: 	POJO
-  superClass: 	filterBasic
-
-- filterBasic: 	org.fulib.classmodel.Clazz
-  attributes: 	filterBasic_filterYear 	filterBasic_filterFsk 	filterBasic_filterGenre
-  model: 	c
-  modified: 	false
-  name: 	FilterBasic
-  propertyStyle: 	POJO
-  subClasses: 	filterBook 	filterGame 	filterMovie 	filterAnime 	filterSeries
 
 - filterGame: 	org.fulib.classmodel.Clazz
-  attributes: 	filterGame_filterUniverse
+  attributes: 	filterGame_filterUniverse 	filterGame_filterUsk 	filterGame_filterGenre 	filterGame_filterYear 	filterGame_filterPlatform
   model: 	c
   modified: 	false
   name: 	FilterGame
   propertyStyle: 	POJO
-  superClass: 	filterBasic
 
 - filterMovie: 	org.fulib.classmodel.Clazz
-  attributes: 	filterMovie_filterUniverse
+  attributes: 	filterMovie_filterUniverse 	filterMovie_filterYear 	filterMovie_filterFsk
   model: 	c
   modified: 	false
   name: 	FilterMovie
   propertyStyle: 	POJO
-  superClass: 	filterBasic
 
 - filterAnime: 	org.fulib.classmodel.Clazz
+  attributes: 	filterAnime_filterYear 	filterAnime_filterFsk 	filterAnime_filterGenre
   model: 	c
   modified: 	false
   name: 	FilterAnime
   propertyStyle: 	POJO
-  superClass: 	filterBasic
 
 - filterSeries: 	org.fulib.classmodel.Clazz
-  attributes: 	filterSeries_filterLanguage 	filterSeries_filterPlatform
+  attributes: 	filterSeries_filterLanguage 	filterSeries_filterGenre 	filterSeries_filterYear 	filterSeries_filterFsk 	filterSeries_filterPlatform
   model: 	c
   modified: 	false
   name: 	FilterSeries
   propertyStyle: 	POJO
-  superClass: 	filterBasic
 
 - filterType: 	org.fulib.classmodel.Clazz
   attributes: 	filterType_filter
@@ -70,91 +58,201 @@
 
 - filterBook_filterUniverse: 	org.fulib.classmodel.Attribute
   clazz: 	filterBook
+  collectionType: 	c1
   id: 	FilterBook_filterUniverse
   modified: 	false
   name: 	filterUniverse
   propertyStyle: 	POJO
-  type: 	"String[]"
-  typeSignature: 	"String[]"
+  type: 	String
+  typeSignature: 	String
 
 - filterBook_filterAuthor: 	org.fulib.classmodel.Attribute
   clazz: 	filterBook
+  collectionType: 	c1
   id: 	FilterBook_filterAuthor
   modified: 	false
   name: 	filterAuthor
   propertyStyle: 	POJO
-  type: 	"String[]"
-  typeSignature: 	"String[]"
+  type: 	String
+  typeSignature: 	String
 
-- filterBasic_filterYear: 	org.fulib.classmodel.Attribute
-  clazz: 	filterBasic
-  id: 	FilterBasic_filterYear
+- filterBook_filterYear: 	org.fulib.classmodel.Attribute
+  clazz: 	filterBook
+  collectionType: 	c1
+  id: 	FilterBook_filterYear
   modified: 	false
   name: 	filterYear
   propertyStyle: 	POJO
-  type: 	"String[]"
-  typeSignature: 	"String[]"
-
-- filterBasic_filterFsk: 	org.fulib.classmodel.Attribute
-  clazz: 	filterBasic
-  id: 	FilterBasic_filterFsk
-  modified: 	false
-  name: 	filterFsk
-  propertyStyle: 	POJO
-  type: 	"String[]"
-  typeSignature: 	"String[]"
-
-- filterBasic_filterGenre: 	org.fulib.classmodel.Attribute
-  clazz: 	filterBasic
-  id: 	FilterBasic_filterGenre
-  modified: 	false
-  name: 	filterGenre
-  propertyStyle: 	POJO
-  type: 	"String[]"
-  typeSignature: 	"String[]"
+  type: 	Integer
+  typeSignature: 	Integer
 
 - filterGame_filterUniverse: 	org.fulib.classmodel.Attribute
   clazz: 	filterGame
+  collectionType: 	c1
   id: 	FilterGame_filterUniverse
   modified: 	false
   name: 	filterUniverse
   propertyStyle: 	POJO
-  type: 	"String[]"
-  typeSignature: 	"String[]"
+  type: 	String
+  typeSignature: 	String
+
+- filterGame_filterUsk: 	org.fulib.classmodel.Attribute
+  clazz: 	filterGame
+  collectionType: 	c1
+  id: 	FilterGame_filterUsk
+  modified: 	false
+  name: 	filterUsk
+  propertyStyle: 	POJO
+  type: 	Integer
+  typeSignature: 	Integer
+
+- filterGame_filterGenre: 	org.fulib.classmodel.Attribute
+  clazz: 	filterGame
+  collectionType: 	c1
+  id: 	FilterGame_filterGenre
+  modified: 	false
+  name: 	filterGenre
+  propertyStyle: 	POJO
+  type: 	String
+  typeSignature: 	String
+
+- filterGame_filterYear: 	org.fulib.classmodel.Attribute
+  clazz: 	filterGame
+  collectionType: 	c1
+  id: 	FilterGame_filterYear
+  modified: 	false
+  name: 	filterYear
+  propertyStyle: 	POJO
+  type: 	Integer
+  typeSignature: 	Integer
+
+- filterGame_filterPlatform: 	org.fulib.classmodel.Attribute
+  clazz: 	filterGame
+  collectionType: 	c1
+  id: 	FilterGame_filterPlatform
+  modified: 	false
+  name: 	filterPlatform
+  propertyStyle: 	POJO
+  type: 	String
+  typeSignature: 	String
 
 - filterMovie_filterUniverse: 	org.fulib.classmodel.Attribute
   clazz: 	filterMovie
+  collectionType: 	c1
   id: 	FilterMovie_filterUniverse
   modified: 	false
   name: 	filterUniverse
   propertyStyle: 	POJO
-  type: 	"String[]"
-  typeSignature: 	"String[]"
+  type: 	String
+  typeSignature: 	String
+
+- filterMovie_filterYear: 	org.fulib.classmodel.Attribute
+  clazz: 	filterMovie
+  collectionType: 	c1
+  id: 	FilterMovie_filterYear
+  modified: 	false
+  name: 	filterYear
+  propertyStyle: 	POJO
+  type: 	Integer
+  typeSignature: 	Integer
+
+- filterMovie_filterFsk: 	org.fulib.classmodel.Attribute
+  clazz: 	filterMovie
+  collectionType: 	c1
+  id: 	FilterMovie_filterFsk
+  modified: 	false
+  name: 	filterFsk
+  propertyStyle: 	POJO
+  type: 	Integer
+  typeSignature: 	Integer
+
+- filterAnime_filterYear: 	org.fulib.classmodel.Attribute
+  clazz: 	filterAnime
+  collectionType: 	c1
+  id: 	FilterAnime_filterYear
+  modified: 	false
+  name: 	filterYear
+  propertyStyle: 	POJO
+  type: 	Integer
+  typeSignature: 	Integer
+
+- filterAnime_filterFsk: 	org.fulib.classmodel.Attribute
+  clazz: 	filterAnime
+  collectionType: 	c1
+  id: 	FilterAnime_filterFsk
+  modified: 	false
+  name: 	filterFsk
+  propertyStyle: 	POJO
+  type: 	Integer
+  typeSignature: 	Integer
+
+- filterAnime_filterGenre: 	org.fulib.classmodel.Attribute
+  clazz: 	filterAnime
+  collectionType: 	c1
+  id: 	FilterAnime_filterGenre
+  modified: 	false
+  name: 	filterGenre
+  propertyStyle: 	POJO
+  type: 	String
+  typeSignature: 	String
 
 - filterSeries_filterLanguage: 	org.fulib.classmodel.Attribute
   clazz: 	filterSeries
+  collectionType: 	c1
   id: 	FilterSeries_filterLanguage
   modified: 	false
   name: 	filterLanguage
   propertyStyle: 	POJO
-  type: 	"String[]"
-  typeSignature: 	"String[]"
+  type: 	String
+  typeSignature: 	String
+
+- filterSeries_filterGenre: 	org.fulib.classmodel.Attribute
+  clazz: 	filterSeries
+  collectionType: 	c1
+  id: 	FilterSeries_filterGenre
+  modified: 	false
+  name: 	filterGenre
+  propertyStyle: 	POJO
+  type: 	String
+  typeSignature: 	String
+
+- filterSeries_filterYear: 	org.fulib.classmodel.Attribute
+  clazz: 	filterSeries
+  collectionType: 	c1
+  id: 	FilterSeries_filterYear
+  modified: 	false
+  name: 	filterYear
+  propertyStyle: 	POJO
+  type: 	Integer
+  typeSignature: 	Integer
+
+- filterSeries_filterFsk: 	org.fulib.classmodel.Attribute
+  clazz: 	filterSeries
+  collectionType: 	c1
+  id: 	FilterSeries_filterFsk
+  modified: 	false
+  name: 	filterFsk
+  propertyStyle: 	POJO
+  type: 	Integer
+  typeSignature: 	Integer
 
 - filterSeries_filterPlatform: 	org.fulib.classmodel.Attribute
   clazz: 	filterSeries
+  collectionType: 	c1
   id: 	FilterSeries_filterPlatform
   modified: 	false
   name: 	filterPlatform
   propertyStyle: 	POJO
-  type: 	"String[]"
-  typeSignature: 	"String[]"
+  type: 	String
+  typeSignature: 	String
 
 - filterType_filter: 	org.fulib.classmodel.Attribute
   clazz: 	filterType
+  collectionType: 	c1
   id: 	FilterType_filter
   modified: 	false
   name: 	filter
   propertyStyle: 	POJO
-  type: 	"String[]"
-  typeSignature: 	"String[]"
+  type: 	String
+  typeSignature: 	String
 

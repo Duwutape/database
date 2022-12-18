@@ -17,7 +17,6 @@ public class Season
    public static final String PROPERTY_YEAR_OV = "yearOV";
    public static final String PROPERTY_YEAR_GER = "yearGer";
    public static final String PROPERTY_FSK = "fsk";
-   public static final String PROPERTY_GENRE = "genre";
    public static final String PROPERTY_PLATFORM = "platform";
    private int numEpisodes;
    private float lenEpisodes;
@@ -29,7 +28,6 @@ public class Season
    private List<Integer> yearOV;
    private List<Integer> yearGer;
    private int fsk;
-   private List<String> genre;
    private List<String> platform;
 
    public int getNumEpisodes()
@@ -351,61 +349,6 @@ public class Season
       return this;
    }
 
-   public List<String> getGenre()
-   {
-      return this.genre != null ? Collections.unmodifiableList(this.genre) : Collections.emptyList();
-   }
-
-   public Season withGenre(String value)
-   {
-      if (this.genre == null)
-      {
-         this.genre = new ArrayList<>();
-      }
-      this.genre.add(value);
-      return this;
-   }
-
-   public Season withGenre(String... value)
-   {
-      this.withGenre(Arrays.asList(value));
-      return this;
-   }
-
-   public Season withGenre(Collection<? extends String> value)
-   {
-      if (this.genre == null)
-      {
-         this.genre = new ArrayList<>(value);
-      }
-      else
-      {
-         this.genre.addAll(value);
-      }
-      return this;
-   }
-
-   public Season withoutGenre(String value)
-   {
-      this.genre.removeAll(Collections.singleton(value));
-      return this;
-   }
-
-   public Season withoutGenre(String... value)
-   {
-      this.withoutGenre(Arrays.asList(value));
-      return this;
-   }
-
-   public Season withoutGenre(Collection<? extends String> value)
-   {
-      if (this.genre != null)
-      {
-         this.genre.removeAll(value);
-      }
-      return this;
-   }
-
    public List<String> getPlatform()
    {
       return this.platform != null ? Collections.unmodifiableList(this.platform) : Collections.emptyList();
@@ -473,7 +416,6 @@ public class Season
    {
       final StringBuilder result = new StringBuilder();
       result.append(' ').append(this.getName());
-      result.append(' ').append(this.getGenre());
       result.append(' ').append(this.getPlatform());
       return result.substring(1);
    }

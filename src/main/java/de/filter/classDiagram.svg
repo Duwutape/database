@@ -1,96 +1,69 @@
-<svg width="894px" height="199px"
- viewBox="0.00 0.00 894.00 199.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0) translate(4 195)">
+<svg width="1106px" height="128px"
+ viewBox="0.00 0.00 1106.00 128.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0) translate(4 124)">
 <title>de.filter</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-195 890,-195 890,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-124 1102,-124 1102,4 -4,4"/>
 <!-- FilterAnime -->
 <g id="node1" class="node">
 <title>FilterAnime</title>
-<polygon fill="none" stroke="black" points="8,-26.5 8,-48.5 82,-48.5 82,-26.5 8,-26.5"/>
-<text text-anchor="start" x="10.78" y="-32.9" font-family="Times,serif" font-size="14.00">FilterAnime</text>
-<polygon fill="none" stroke="black" points="8,-20.5 8,-26.5 82,-26.5 82,-20.5 8,-20.5"/>
-</g>
-<!-- FilterBasic -->
-<g id="node2" class="node">
-<title>FilterBasic</title>
-<polygon fill="none" stroke="black" points="292,-165 292,-187 410,-187 410,-165 292,-165"/>
-<text text-anchor="start" x="320.28" y="-171.4" font-family="Times,serif" font-size="14.00">FilterBasic</text>
-<polygon fill="none" stroke="black" points="292,-109 292,-165 410,-165 410,-109 292,-109"/>
-<text text-anchor="start" x="295" y="-149.4" font-family="Times,serif" font-size="14.00">filterYear :String[]</text>
-<text text-anchor="start" x="295" y="-132.6" font-family="Times,serif" font-size="14.00">filterFsk :String[]</text>
-<text text-anchor="start" x="295" y="-115.8" font-family="Times,serif" font-size="14.00">filterGenre :String[]</text>
-</g>
-<!-- FilterAnime&#45;&gt;FilterBasic -->
-<g id="edge1" class="edge">
-<title>FilterAnime&#45;&gt;FilterBasic</title>
-<path fill="none" stroke="black" d="M69.53,-52.56C78.53,-58.31 88.96,-64.42 99,-69 155.55,-94.78 222.96,-115.15 273.82,-128.59"/>
-<polygon fill="none" stroke="black" points="273.21,-132.05 283.77,-131.19 274.97,-125.28 273.21,-132.05"/>
+<polygon fill="none" stroke="black" points="8,-77 8,-99 154,-99 154,-77 8,-77"/>
+<text text-anchor="start" x="46.78" y="-83.4" font-family="Times,serif" font-size="14.00">FilterAnime</text>
+<polygon fill="none" stroke="black" points="8,-21 8,-77 154,-77 154,-21 8,-21"/>
+<text text-anchor="start" x="11" y="-61.4" font-family="Times,serif" font-size="14.00">filterYear :List&lt;Integer&gt;</text>
+<text text-anchor="start" x="11" y="-44.6" font-family="Times,serif" font-size="14.00">filterFsk :List&lt;Integer&gt;</text>
+<text text-anchor="start" x="11" y="-27.8" font-family="Times,serif" font-size="14.00">filterGenre :List&lt;String&gt;</text>
 </g>
 <!-- FilterBook -->
-<g id="node3" class="node">
+<g id="node2" class="node">
 <title>FilterBook</title>
-<polygon fill="none" stroke="black" points="116,-42.5 116,-64.5 250,-64.5 250,-42.5 116,-42.5"/>
-<text text-anchor="start" x="152.67" y="-48.9" font-family="Times,serif" font-size="14.00">FilterBook</text>
-<polygon fill="none" stroke="black" points="116,-3.5 116,-42.5 250,-42.5 250,-3.5 116,-3.5"/>
-<text text-anchor="start" x="119" y="-26.9" font-family="Times,serif" font-size="14.00">filterUniverse :String[]</text>
-<text text-anchor="start" x="119" y="-10.1" font-family="Times,serif" font-size="14.00">filterAuthor :String[]</text>
-</g>
-<!-- FilterBook&#45;&gt;FilterBasic -->
-<g id="edge2" class="edge">
-<title>FilterBook&#45;&gt;FilterBasic</title>
-<path fill="none" stroke="black" d="M233.86,-69.26C248.12,-78.72 263.9,-89.19 279.13,-99.3"/>
-<polygon fill="none" stroke="black" points="277.26,-102.26 287.53,-104.87 281.13,-96.43 277.26,-102.26"/>
+<polygon fill="none" stroke="black" points="188,-77 188,-99 350,-99 350,-77 188,-77"/>
+<text text-anchor="start" x="238.67" y="-83.4" font-family="Times,serif" font-size="14.00">FilterBook</text>
+<polygon fill="none" stroke="black" points="188,-21 188,-77 350,-77 350,-21 188,-21"/>
+<text text-anchor="start" x="191" y="-61.4" font-family="Times,serif" font-size="14.00">filterUniverse :List&lt;String&gt;</text>
+<text text-anchor="start" x="191" y="-44.6" font-family="Times,serif" font-size="14.00">filterAuthor :List&lt;String&gt;</text>
+<text text-anchor="start" x="191" y="-27.8" font-family="Times,serif" font-size="14.00">filterYear :List&lt;Integer&gt;</text>
 </g>
 <!-- FilterGame -->
-<g id="node4" class="node">
+<g id="node3" class="node">
 <title>FilterGame</title>
-<polygon fill="none" stroke="black" points="284,-34.5 284,-56.5 418,-56.5 418,-34.5 284,-34.5"/>
-<text text-anchor="start" x="319.12" y="-40.9" font-family="Times,serif" font-size="14.00">FilterGame</text>
-<polygon fill="none" stroke="black" points="284,-12.5 284,-34.5 418,-34.5 418,-12.5 284,-12.5"/>
-<text text-anchor="start" x="287" y="-18.9" font-family="Times,serif" font-size="14.00">filterUniverse :String[]</text>
-</g>
-<!-- FilterGame&#45;&gt;FilterBasic -->
-<g id="edge3" class="edge">
-<title>FilterGame&#45;&gt;FilterBasic</title>
-<path fill="none" stroke="black" d="M351,-60.52C351,-70.65 351,-82.75 351,-94.65"/>
-<polygon fill="none" stroke="black" points="347.5,-94.99 351,-104.99 354.5,-94.99 347.5,-94.99"/>
+<polygon fill="none" stroke="black" points="384,-94 384,-116 546,-116 546,-94 384,-94"/>
+<text text-anchor="start" x="433.12" y="-100.4" font-family="Times,serif" font-size="14.00">FilterGame</text>
+<polygon fill="none" stroke="black" points="384,-4 384,-94 546,-94 546,-4 384,-4"/>
+<text text-anchor="start" x="387" y="-78.4" font-family="Times,serif" font-size="14.00">filterUniverse :List&lt;String&gt;</text>
+<text text-anchor="start" x="387" y="-61.6" font-family="Times,serif" font-size="14.00">filterUsk :List&lt;Integer&gt;</text>
+<text text-anchor="start" x="387" y="-44.8" font-family="Times,serif" font-size="14.00">filterGenre :List&lt;String&gt;</text>
+<text text-anchor="start" x="387" y="-28" font-family="Times,serif" font-size="14.00">filterYear :List&lt;Integer&gt;</text>
+<text text-anchor="start" x="387" y="-11.2" font-family="Times,serif" font-size="14.00">filterPlatform :List&lt;String&gt;</text>
 </g>
 <!-- FilterMovie -->
-<g id="node5" class="node">
+<g id="node4" class="node">
 <title>FilterMovie</title>
-<polygon fill="none" stroke="black" points="452,-34.5 452,-56.5 586,-56.5 586,-34.5 452,-34.5"/>
-<text text-anchor="start" x="485.56" y="-40.9" font-family="Times,serif" font-size="14.00">FilterMovie</text>
-<polygon fill="none" stroke="black" points="452,-12.5 452,-34.5 586,-34.5 586,-12.5 452,-12.5"/>
-<text text-anchor="start" x="455" y="-18.9" font-family="Times,serif" font-size="14.00">filterUniverse :String[]</text>
-</g>
-<!-- FilterMovie&#45;&gt;FilterBasic -->
-<g id="edge4" class="edge">
-<title>FilterMovie&#45;&gt;FilterBasic</title>
-<path fill="none" stroke="black" d="M481.3,-60.52C464.03,-71.98 442.96,-85.96 422.85,-99.31"/>
-<polygon fill="none" stroke="black" points="420.7,-96.54 414.3,-104.99 424.57,-102.37 420.7,-96.54"/>
+<polygon fill="none" stroke="black" points="580,-77 580,-99 742,-99 742,-77 580,-77"/>
+<text text-anchor="start" x="627.56" y="-83.4" font-family="Times,serif" font-size="14.00">FilterMovie</text>
+<polygon fill="none" stroke="black" points="580,-21 580,-77 742,-77 742,-21 580,-21"/>
+<text text-anchor="start" x="583" y="-61.4" font-family="Times,serif" font-size="14.00">filterUniverse :List&lt;String&gt;</text>
+<text text-anchor="start" x="583" y="-44.6" font-family="Times,serif" font-size="14.00">filterYear :List&lt;Integer&gt;</text>
+<text text-anchor="start" x="583" y="-27.8" font-family="Times,serif" font-size="14.00">filterFsk :List&lt;Integer&gt;</text>
 </g>
 <!-- FilterSeries -->
-<g id="node6" class="node">
+<g id="node5" class="node">
 <title>FilterSeries</title>
-<polygon fill="none" stroke="black" points="621,-42.5 621,-64.5 760,-64.5 760,-42.5 621,-42.5"/>
-<text text-anchor="start" x="658.23" y="-48.9" font-family="Times,serif" font-size="14.00">FilterSeries</text>
-<polygon fill="none" stroke="black" points="621,-3.5 621,-42.5 760,-42.5 760,-3.5 621,-3.5"/>
-<text text-anchor="start" x="624" y="-26.9" font-family="Times,serif" font-size="14.00">filterLanguage :String[]</text>
-<text text-anchor="start" x="624" y="-10.1" font-family="Times,serif" font-size="14.00">filterPlatform :String[]</text>
-</g>
-<!-- FilterSeries&#45;&gt;FilterBasic -->
-<g id="edge5" class="edge">
-<title>FilterSeries&#45;&gt;FilterBasic</title>
-<path fill="none" stroke="black" d="M612.31,-65.71C609.17,-66.84 606.06,-67.94 603,-69 544.79,-89.19 478.17,-109.7 428.05,-124.62"/>
-<polygon fill="none" stroke="black" points="426.84,-121.33 418.25,-127.53 428.83,-128.04 426.84,-121.33"/>
+<polygon fill="none" stroke="black" points="777,-94 777,-116 944,-116 944,-94 777,-94"/>
+<text text-anchor="start" x="828.23" y="-100.4" font-family="Times,serif" font-size="14.00">FilterSeries</text>
+<polygon fill="none" stroke="black" points="777,-4 777,-94 944,-94 944,-4 777,-4"/>
+<text text-anchor="start" x="780" y="-78.4" font-family="Times,serif" font-size="14.00">filterLanguage :List&lt;String&gt;</text>
+<text text-anchor="start" x="780" y="-61.6" font-family="Times,serif" font-size="14.00">filterGenre :List&lt;String&gt;</text>
+<text text-anchor="start" x="780" y="-44.8" font-family="Times,serif" font-size="14.00">filterYear :List&lt;Integer&gt;</text>
+<text text-anchor="start" x="780" y="-28" font-family="Times,serif" font-size="14.00">filterFsk :List&lt;Integer&gt;</text>
+<text text-anchor="start" x="780" y="-11.2" font-family="Times,serif" font-size="14.00">filterPlatform :List&lt;String&gt;</text>
 </g>
 <!-- FilterType -->
-<g id="node7" class="node">
+<g id="node6" class="node">
 <title>FilterType</title>
-<polygon fill="none" stroke="black" points="794,-34.5 794,-56.5 878,-56.5 878,-34.5 794,-34.5"/>
-<text text-anchor="start" x="806.45" y="-40.9" font-family="Times,serif" font-size="14.00">FilterType</text>
-<polygon fill="none" stroke="black" points="794,-12.5 794,-34.5 878,-34.5 878,-12.5 794,-12.5"/>
-<text text-anchor="start" x="797" y="-18.9" font-family="Times,serif" font-size="14.00">filter :String[]</text>
+<polygon fill="none" stroke="black" points="978,-60 978,-82 1090,-82 1090,-60 978,-60"/>
+<text text-anchor="start" x="1004.45" y="-66.4" font-family="Times,serif" font-size="14.00">FilterType</text>
+<polygon fill="none" stroke="black" points="978,-38 978,-60 1090,-60 1090,-38 978,-38"/>
+<text text-anchor="start" x="981" y="-44.4" font-family="Times,serif" font-size="14.00">filter :List&lt;String&gt;</text>
 </g>
 </g>
 </svg>

@@ -1,5 +1,5 @@
 - c: 	org.fulib.classmodel.ClassModel
-  classes: 	book 	release 	game 	movie 	anime 	season 	series 	data
+  classes: 	book 	allBook 	release 	game 	allGame 	movie 	allMovie 	anime 	allAnime 	season 	series 	allSeries
   defaultCollectionType: 	c1
   defaultPropertyStyle: 	POJO
   defaultRoleType: 	"java.util.ArrayList<%s>"
@@ -8,12 +8,19 @@
   packageSrcFolder: 	"src/main/java/de/model"
 
 - book: 	org.fulib.classmodel.Clazz
-  attributes: 	book_alias 	book_nameOV 	book_nameGer 	book_universe 	book_author 	book_date
+  attributes: 	book_alias 	book_nameOV 	book_nameGer 	book_universe 	book_author 	book_year
   model: 	c
   modified: 	false
   name: 	Book
   propertyStyle: 	POJO
-  roles: 	book_prequel 	book_sequel 	book_Data_booksList
+  roles: 	book_prequel 	book_sequel 	book_AllBook_bookList
+
+- allBook: 	org.fulib.classmodel.Clazz
+  model: 	c
+  modified: 	false
+  name: 	AllBook
+  propertyStyle: 	POJO
+  roles: 	allBook_bookList
 
 - release: 	org.fulib.classmodel.Clazz
   attributes: 	release_year 	release_platform 	release_note
@@ -29,7 +36,14 @@
   modified: 	false
   name: 	Game
   propertyStyle: 	POJO
-  roles: 	game_prequel 	game_sequel 	game_published 	game_Data_gamesList
+  roles: 	game_prequel 	game_sequel 	game_published 	game_AllGame_gameList
+
+- allGame: 	org.fulib.classmodel.Clazz
+  model: 	c
+  modified: 	false
+  name: 	AllGame
+  propertyStyle: 	POJO
+  roles: 	allGame_gameList
 
 - movie: 	org.fulib.classmodel.Clazz
   attributes: 	movie_alias 	movie_nameOV 	movie_nameGer 	movie_universe 	movie_year 	movie_fsk 	movie_length
@@ -37,7 +51,14 @@
   modified: 	false
   name: 	Movie
   propertyStyle: 	POJO
-  roles: 	movie_prequel 	movie_sequel 	movie_Data_MoviesList
+  roles: 	movie_prequel 	movie_sequel 	movie_AllMovie_movieList
+
+- allMovie: 	org.fulib.classmodel.Clazz
+  model: 	c
+  modified: 	false
+  name: 	AllMovie
+  propertyStyle: 	POJO
+  roles: 	allMovie_movieList
 
 - anime: 	org.fulib.classmodel.Clazz
   attributes: 	anime_alias 	anime_nameJap 	anime_nameEng 	anime_nameGer 	anime_year 	anime_fsk 	anime_genre 	anime_numEpisodes 	anime_lenEpisodes 	anime_lenAnime
@@ -45,10 +66,17 @@
   modified: 	false
   name: 	Anime
   propertyStyle: 	POJO
-  roles: 	anime_prequel 	anime_sequel 	anime_Data_animeList
+  roles: 	anime_prequel 	anime_sequel 	anime_AllAnime_animeList
+
+- allAnime: 	org.fulib.classmodel.Clazz
+  model: 	c
+  modified: 	false
+  name: 	AllAnime
+  propertyStyle: 	POJO
+  roles: 	allAnime_animeList
 
 - season: 	org.fulib.classmodel.Clazz
-  attributes: 	season_name 	season_yearOV 	season_yearGer 	season_fsk 	season_genre 	season_platform 	season_numEpisodes 	season_lenEpisodes 	season_lenSeason
+  attributes: 	season_name 	season_yearOV 	season_yearGer 	season_fsk 	season_platform 	season_numEpisodes 	season_lenEpisodes 	season_lenSeason
   model: 	c
   modified: 	false
   name: 	Season
@@ -56,19 +84,19 @@
   roles: 	season_prequel 	season_sequel 	season_series
 
 - series: 	org.fulib.classmodel.Clazz
-  attributes: 	series_alias 	series_nameOV 	series_nameGer 	series_language
+  attributes: 	series_alias 	series_nameOV 	series_nameGer 	series_language 	series_genre
   model: 	c
   modified: 	false
   name: 	Series
   propertyStyle: 	POJO
-  roles: 	series_seasons 	series_Data_seriesList
+  roles: 	series_seasons 	series_AllSeries_seriesList
 
-- data: 	org.fulib.classmodel.Clazz
+- allSeries: 	org.fulib.classmodel.Clazz
   model: 	c
   modified: 	false
-  name: 	Data
+  name: 	AllSeries
   propertyStyle: 	POJO
-  roles: 	data_seriesList 	data_animeList 	data_MoviesList 	data_gamesList 	data_booksList
+  roles: 	allSeries_seriesList
 
 - c1: 	org.fulib.classmodel.CollectionType
   implClass: 	class java.util.ArrayList
@@ -124,14 +152,14 @@
   type: 	String
   typeSignature: 	String
 
-- book_date: 	org.fulib.classmodel.Attribute
+- book_year: 	org.fulib.classmodel.Attribute
   clazz: 	book
-  id: 	Book_date
+  id: 	Book_year
   modified: 	false
-  name: 	date
+  name: 	year
   propertyStyle: 	POJO
-  type: 	"import(java.util.Date)"
-  typeSignature: 	Date
+  type: 	int
+  typeSignature: 	int
 
 - book_prequel: 	org.fulib.classmodel.AssocRole
   aggregation: 	false
@@ -157,14 +185,26 @@
   propertyStyle: 	POJO
   roleType: 	"java.util.ArrayList<%s>"
 
-- book_Data_booksList: 	org.fulib.classmodel.AssocRole
+- book_AllBook_bookList: 	org.fulib.classmodel.AssocRole
   aggregation: 	false
   cardinality: 	0
   clazz: 	book
   collectionType: 	c1
-  id: 	Book_Data_booksList
+  id: 	Book_AllBook_bookList
   modified: 	false
-  other: 	data_booksList
+  other: 	allBook_bookList
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- allBook_bookList: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	allBook
+  collectionType: 	c1
+  id: 	AllBook_bookList
+  modified: 	false
+  name: 	bookList
+  other: 	book_AllBook_bookList
   propertyStyle: 	POJO
   roleType: 	"java.util.ArrayList<%s>"
 
@@ -300,14 +340,26 @@
   propertyStyle: 	POJO
   roleType: 	"java.util.ArrayList<%s>"
 
-- game_Data_gamesList: 	org.fulib.classmodel.AssocRole
+- game_AllGame_gameList: 	org.fulib.classmodel.AssocRole
   aggregation: 	false
   cardinality: 	0
   clazz: 	game
   collectionType: 	c1
-  id: 	Game_Data_gamesList
+  id: 	Game_AllGame_gameList
   modified: 	false
-  other: 	data_gamesList
+  other: 	allGame_gameList
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- allGame_gameList: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	allGame
+  collectionType: 	c1
+  id: 	AllGame_gameList
+  modified: 	false
+  name: 	gameList
+  other: 	game_AllGame_gameList
   propertyStyle: 	POJO
   roleType: 	"java.util.ArrayList<%s>"
 
@@ -399,14 +451,26 @@
   propertyStyle: 	POJO
   roleType: 	"java.util.ArrayList<%s>"
 
-- movie_Data_MoviesList: 	org.fulib.classmodel.AssocRole
+- movie_AllMovie_movieList: 	org.fulib.classmodel.AssocRole
   aggregation: 	false
   cardinality: 	0
   clazz: 	movie
   collectionType: 	c1
-  id: 	Movie_Data_MoviesList
+  id: 	Movie_AllMovie_movieList
   modified: 	false
-  other: 	data_MoviesList
+  other: 	allMovie_movieList
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- allMovie_movieList: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	allMovie
+  collectionType: 	c1
+  id: 	AllMovie_movieList
+  modified: 	false
+  name: 	movieList
+  other: 	movie_AllMovie_movieList
   propertyStyle: 	POJO
   roleType: 	"java.util.ArrayList<%s>"
 
@@ -527,14 +591,26 @@
   propertyStyle: 	POJO
   roleType: 	"java.util.ArrayList<%s>"
 
-- anime_Data_animeList: 	org.fulib.classmodel.AssocRole
+- anime_AllAnime_animeList: 	org.fulib.classmodel.AssocRole
   aggregation: 	false
   cardinality: 	0
   clazz: 	anime
   collectionType: 	c1
-  id: 	Anime_Data_animeList
+  id: 	Anime_AllAnime_animeList
   modified: 	false
-  other: 	data_animeList
+  other: 	allAnime_animeList
+  propertyStyle: 	POJO
+  roleType: 	"java.util.ArrayList<%s>"
+
+- allAnime_animeList: 	org.fulib.classmodel.AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	allAnime
+  collectionType: 	c1
+  id: 	AllAnime_animeList
+  modified: 	false
+  name: 	animeList
+  other: 	anime_AllAnime_animeList
   propertyStyle: 	POJO
   roleType: 	"java.util.ArrayList<%s>"
 
@@ -575,16 +651,6 @@
   propertyStyle: 	POJO
   type: 	int
   typeSignature: 	int
-
-- season_genre: 	org.fulib.classmodel.Attribute
-  clazz: 	season
-  collectionType: 	c1
-  id: 	Season_genre
-  modified: 	false
-  name: 	genre
-  propertyStyle: 	POJO
-  type: 	String
-  typeSignature: 	String
 
 - season_platform: 	org.fulib.classmodel.Attribute
   clazz: 	season
@@ -694,6 +760,16 @@
   type: 	String
   typeSignature: 	String
 
+- series_genre: 	org.fulib.classmodel.Attribute
+  clazz: 	series
+  collectionType: 	c1
+  id: 	Series_genre
+  modified: 	false
+  name: 	genre
+  propertyStyle: 	POJO
+  type: 	String
+  typeSignature: 	String
+
 - series_seasons: 	org.fulib.classmodel.AssocRole
   aggregation: 	false
   cardinality: 	42
@@ -706,74 +782,26 @@
   propertyStyle: 	POJO
   roleType: 	"java.util.ArrayList<%s>"
 
-- series_Data_seriesList: 	org.fulib.classmodel.AssocRole
+- series_AllSeries_seriesList: 	org.fulib.classmodel.AssocRole
   aggregation: 	false
   cardinality: 	0
   clazz: 	series
   collectionType: 	c1
-  id: 	Series_Data_seriesList
+  id: 	Series_AllSeries_seriesList
   modified: 	false
-  other: 	data_seriesList
+  other: 	allSeries_seriesList
   propertyStyle: 	POJO
   roleType: 	"java.util.ArrayList<%s>"
 
-- data_seriesList: 	org.fulib.classmodel.AssocRole
+- allSeries_seriesList: 	org.fulib.classmodel.AssocRole
   aggregation: 	false
   cardinality: 	42
-  clazz: 	data
+  clazz: 	allSeries
   collectionType: 	c1
-  id: 	Data_seriesList
+  id: 	AllSeries_seriesList
   modified: 	false
   name: 	seriesList
-  other: 	series_Data_seriesList
-  propertyStyle: 	POJO
-  roleType: 	"java.util.ArrayList<%s>"
-
-- data_animeList: 	org.fulib.classmodel.AssocRole
-  aggregation: 	false
-  cardinality: 	42
-  clazz: 	data
-  collectionType: 	c1
-  id: 	Data_animeList
-  modified: 	false
-  name: 	animeList
-  other: 	anime_Data_animeList
-  propertyStyle: 	POJO
-  roleType: 	"java.util.ArrayList<%s>"
-
-- data_MoviesList: 	org.fulib.classmodel.AssocRole
-  aggregation: 	false
-  cardinality: 	42
-  clazz: 	data
-  collectionType: 	c1
-  id: 	Data_MoviesList
-  modified: 	false
-  name: 	MoviesList
-  other: 	movie_Data_MoviesList
-  propertyStyle: 	POJO
-  roleType: 	"java.util.ArrayList<%s>"
-
-- data_gamesList: 	org.fulib.classmodel.AssocRole
-  aggregation: 	false
-  cardinality: 	42
-  clazz: 	data
-  collectionType: 	c1
-  id: 	Data_gamesList
-  modified: 	false
-  name: 	gamesList
-  other: 	game_Data_gamesList
-  propertyStyle: 	POJO
-  roleType: 	"java.util.ArrayList<%s>"
-
-- data_booksList: 	org.fulib.classmodel.AssocRole
-  aggregation: 	false
-  cardinality: 	42
-  clazz: 	data
-  collectionType: 	c1
-  id: 	Data_booksList
-  modified: 	false
-  name: 	booksList
-  other: 	book_Data_booksList
+  other: 	series_AllSeries_seriesList
   propertyStyle: 	POJO
   roleType: 	"java.util.ArrayList<%s>"
 

@@ -12,11 +12,13 @@ public class Series
    public static final String PROPERTY_ALIAS = "alias";
    public static final String PROPERTY_NAME_OV = "nameOV";
    public static final String PROPERTY_NAME_GER = "nameGer";
+   public static final String PROPERTY_GENRE = "genre";
    private String language;
    private List<Season> seasons;
    private List<String> alias;
    private String nameOV;
    private String nameGer;
+   private List<String> genre;
 
    public String getLanguage()
    {
@@ -170,6 +172,61 @@ public class Series
       return this;
    }
 
+   public List<String> getGenre()
+   {
+      return this.genre != null ? Collections.unmodifiableList(this.genre) : Collections.emptyList();
+   }
+
+   public Series withGenre(String value)
+   {
+      if (this.genre == null)
+      {
+         this.genre = new ArrayList<>();
+      }
+      this.genre.add(value);
+      return this;
+   }
+
+   public Series withGenre(String... value)
+   {
+      this.withGenre(Arrays.asList(value));
+      return this;
+   }
+
+   public Series withGenre(Collection<? extends String> value)
+   {
+      if (this.genre == null)
+      {
+         this.genre = new ArrayList<>(value);
+      }
+      else
+      {
+         this.genre.addAll(value);
+      }
+      return this;
+   }
+
+   public Series withoutGenre(String value)
+   {
+      this.genre.removeAll(Collections.singleton(value));
+      return this;
+   }
+
+   public Series withoutGenre(String... value)
+   {
+      this.withoutGenre(Arrays.asList(value));
+      return this;
+   }
+
+   public Series withoutGenre(Collection<? extends String> value)
+   {
+      if (this.genre != null)
+      {
+         this.genre.removeAll(value);
+      }
+      return this;
+   }
+
    @Override
    public String toString()
    {
@@ -178,6 +235,7 @@ public class Series
       result.append(' ').append(this.getNameOV());
       result.append(' ').append(this.getNameGer());
       result.append(' ').append(this.getLanguage());
+      result.append(' ').append(this.getGenre());
       return result.substring(1);
    }
 
