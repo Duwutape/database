@@ -6,7 +6,6 @@ import de.model.AllSeries;
 import de.model.Series;
 import de.model.User;
 import de.service.CodeService;
-import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -54,7 +53,7 @@ public class MenuController implements Controller {
         final Button aboutButton = (Button) parent.lookup("#aboutButton");
 
         // add choiceBox content
-        final String[] filter = {"Series","Anime","Movie","Game","Book"};
+        final String[] filter = {"Series", "Anime", "Movie", "Game", "Book"};
         choiceBox.setItems(FXCollections.observableArrayList(filter));
         choiceBox.setValue(filter[0]);
 
@@ -65,7 +64,7 @@ public class MenuController implements Controller {
 
         // add result elements
         final VBox result = (VBox) parent.lookup("#result");
-        for(Series series : allSeries.getSeriesList()){
+        for (final Series series : allSeries.getSeriesList()) {
             final ResultController resultController = new ResultController(series);
             result.getChildren().add(resultController.render());
         }
