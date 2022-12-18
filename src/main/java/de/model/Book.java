@@ -7,17 +7,23 @@ import java.util.Collection;
 import java.util.Date;
 
 public class Book
-extends Basic {
+{
    public static final String PROPERTY_UNIVERSE = "universe";
    public static final String PROPERTY_AUTHOR = "author";
    public static final String PROPERTY_DATE = "date";
    public static final String PROPERTY_PREQUEL = "prequel";
    public static final String PROPERTY_SEQUEL = "sequel";
+   public static final String PROPERTY_ALIAS = "alias";
+   public static final String PROPERTY_NAME_OV = "nameOV";
+   public static final String PROPERTY_NAME_GER = "nameGer";
    private String universe;
    private List<String> author;
    private Date date;
    private List<Book> prequel;
    private List<Book> sequel;
+   private List<String> alias;
+   private String nameOV;
+   private String nameGer;
 
    public String getUniverse()
    {
@@ -224,13 +230,93 @@ extends Basic {
       return this;
    }
 
+   public List<String> getAlias()
+   {
+      return this.alias != null ? Collections.unmodifiableList(this.alias) : Collections.emptyList();
+   }
+
+   public Book withAlias(String value)
+   {
+      if (this.alias == null)
+      {
+         this.alias = new ArrayList<>();
+      }
+      this.alias.add(value);
+      return this;
+   }
+
+   public Book withAlias(String... value)
+   {
+      this.withAlias(Arrays.asList(value));
+      return this;
+   }
+
+   public Book withAlias(Collection<? extends String> value)
+   {
+      if (this.alias == null)
+      {
+         this.alias = new ArrayList<>(value);
+      }
+      else
+      {
+         this.alias.addAll(value);
+      }
+      return this;
+   }
+
+   public Book withoutAlias(String value)
+   {
+      this.alias.removeAll(Collections.singleton(value));
+      return this;
+   }
+
+   public Book withoutAlias(String... value)
+   {
+      this.withoutAlias(Arrays.asList(value));
+      return this;
+   }
+
+   public Book withoutAlias(Collection<? extends String> value)
+   {
+      if (this.alias != null)
+      {
+         this.alias.removeAll(value);
+      }
+      return this;
+   }
+
+   public String getNameOV()
+   {
+      return this.nameOV;
+   }
+
+   public Book setNameOV(String value)
+   {
+      this.nameOV = value;
+      return this;
+   }
+
+   public String getNameGer()
+   {
+      return this.nameGer;
+   }
+
+   public Book setNameGer(String value)
+   {
+      this.nameGer = value;
+      return this;
+   }
+
    @Override
    public String toString()
    {
-      final StringBuilder result = new StringBuilder(super.toString());
+      final StringBuilder result = new StringBuilder();
+      result.append(' ').append(this.getAlias());
+      result.append(' ').append(this.getNameOV());
+      result.append(' ').append(this.getNameGer());
       result.append(' ').append(this.getUniverse());
       result.append(' ').append(this.getAuthor());
-      return result.toString();
+      return result.substring(1);
    }
 
    public void removeYou()

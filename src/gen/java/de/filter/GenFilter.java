@@ -4,39 +4,47 @@ import de.model.GenModel;
 import org.fulib.builder.ClassModelDecorator;
 import org.fulib.builder.ClassModelManager;
 
+import java.util.ArrayList;
+
 @SuppressWarnings("unused")
 public class GenFilter implements ClassModelDecorator {
 
     class FilterType {
-        String[] filter;
+        ArrayList<String> filter;
     }
 
-    class FilterBasic {
-        String[] filterYear;
-        String[] filterFsk;
-        String[] filterGenre;
+    class FilterSeries {
+        ArrayList<String> filterLanguage;
+        ArrayList<String> filterGenre;
+        ArrayList<Integer> filterYear;
+        ArrayList<Integer> filterFsk;
+        ArrayList<String> filterPlatform;
     }
 
-    class FilterSeries extends FilterBasic {
-        String[] filterLanguage;
-        String[] filterPlatform;
+    class FilterAnime {
+        ArrayList<Integer> filterYear;
+        ArrayList<Integer> filterFsk;
+        ArrayList<String> filterGenre;
     }
 
-    class FilterAnime extends FilterBasic {
-
+    class FilterMovie {
+        ArrayList<String> filterUniverse;
+        ArrayList<Integer> filterYear;
+        ArrayList<Integer> filterFsk;
     }
 
-    class FilterMovie extends FilterBasic {
-        String[] filterUniverse;
+    class FilterGame {
+        ArrayList<String> filterUniverse;
+        ArrayList<Integer> filterUsk;
+        ArrayList<String> filterGenre;
+        ArrayList<Integer> filterYear;
+        ArrayList<String> filterPlatform;
     }
 
-    class FilterGame extends FilterBasic {
-        String[] filterUniverse;
-    }
-
-    class FilterBook extends FilterBasic {
-        String[] filterUniverse;
-        String[] filterAuthor;
+    class FilterBook {
+        ArrayList<String> filterUniverse;
+        ArrayList<String> filterAuthor;
+        ArrayList<Integer> filterYear;
     }
 
     @Override
