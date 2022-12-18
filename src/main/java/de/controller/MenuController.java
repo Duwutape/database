@@ -2,6 +2,8 @@ package de.controller;
 
 import de.App;
 import de.Main;
+import de.model.AllSeries;
+import de.model.Series;
 import de.model.User;
 import de.service.CodeService;
 import javafx.beans.value.ChangeListener;
@@ -11,8 +13,12 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
+import org.fulib.yaml.YamlIdMap;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class MenuController implements Controller {
     private final App app;
@@ -52,6 +58,17 @@ public class MenuController implements Controller {
         choiceBox.setItems(FXCollections.observableArrayList(filter));
         choiceBox.setValue(filter[0]);
 
+        //load yaml
+        final String yaml = Files.readString(Path.of("data/series.yaml"));
+        final YamlIdMap idMap = new YamlIdMap(User.class.getPackageName());
+        AllSeries allSeries = (AllSeries) idMap.decode(yaml);
+
+        // add result elements
+        final VBox result = (VBox) parent.lookup("#result");
+        for(Series series : allSeries.getSeriesList()){
+            final ResultController resultController = new ResultController(series);
+            result.getChildren().add(resultController.render());
+        }
         //set listener
 
         // set actions

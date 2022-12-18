@@ -37,4 +37,12 @@ public class AppTest extends ApplicationTest
 		clickOn("#backButton");
 		assertEquals("Menu", stage.getTitle());
 	}
+
+	@Test
+	public void search(){
+		assertEquals("Menu", stage.getTitle());
+		clickOn("#searchBar");
+		write("Test");
+		clickOn("searchButton");
+	}
 }
